@@ -31,7 +31,7 @@ class metier
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="text")
+     * @ORM\Column(name="description", nullable=true, unique=true, type="text")
      */
     private $description;
 

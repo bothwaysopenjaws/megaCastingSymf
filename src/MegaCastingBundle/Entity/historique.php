@@ -24,23 +24,23 @@ class historique
     /**
      * @var string
      *
-     * @ORM\Column(name="societe", type="string", length=255)
+     * @ORM\Column(name="societe", nullable=true, type="string", length=255)
      */
     private $societe;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="dateDebut", type="date")
+     * @ORM\Column(name="dateDebut", type="string", length=255)
      */
     private $dateDebut;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="datefin", type="date")
+     * @ORM\Column(name="dateFin", type="string", length=255)
      */
-    private $datefin;
+    private $dateFin;
 
     /**
      * @var string
@@ -86,7 +86,7 @@ class historique
     /**
      * Set dateDebut
      *
-     * @param \DateTime $dateDebut
+     * @param string $dateDebut
      * @return historique
      */
     public function setDateDebut($dateDebut)
@@ -99,7 +99,7 @@ class historique
     /**
      * Get dateDebut
      *
-     * @return \DateTime 
+     * @return string 
      */
     public function getDateDebut()
     {
@@ -109,24 +109,24 @@ class historique
     /**
      * Set datefin
      *
-     * @param \DateTime $datefin
+     * @param string $datefin
      * @return historique
      */
-    public function setDatefin($datefin)
+    public function setDateFin($dateFin)
     {
-        $this->datefin = $datefin;
+        $this->dateFin = $dateFin;
 
         return $this;
     }
 
     /**
-     * Get datefin
+     * Get dateFin
      *
-     * @return \DateTime 
+     * @return string 
      */
-    public function getDatefin()
+    public function getDateFin()
     {
-        return $this->datefin;
+        return $this->dateFin;
     }
 
     /**

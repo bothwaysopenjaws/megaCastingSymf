@@ -31,7 +31,7 @@ class media
     /**
      * @var string
      *
-     * @ORM\Column(name="url", type="string", length=255)
+     * @ORM\Column(name="url", nullable=true, type="string", length=255)
      */
     private $url;
 

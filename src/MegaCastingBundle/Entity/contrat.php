@@ -31,7 +31,7 @@ class contrat
     /**
      * @var string
      *
-     * @ORM\Column(name="clause", type="text")
+     * @ORM\Column(name="clause", nullable=true, type="text")
      */
     private $clause;
 

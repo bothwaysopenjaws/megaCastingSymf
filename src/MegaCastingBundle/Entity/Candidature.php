@@ -38,7 +38,7 @@ class Candidature
     /**
      * @var string
      *
-     * @ORM\Column(name="urlCv", type="string", length=255)
+     * @ORM\Column(name="urlCv", nullable=true, type="string", length=255)
      */
     private $urlCv;
 

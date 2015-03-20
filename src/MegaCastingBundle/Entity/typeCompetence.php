@@ -24,7 +24,7 @@ class typeCompetence
     /**
      * @var string
      *
-     * @ORM\Column(name="libelle", type="string", length=255)
+     * @ORM\Column(name="libelle", unique=true, type="string", length=255)
      */
     private $libelle;
 

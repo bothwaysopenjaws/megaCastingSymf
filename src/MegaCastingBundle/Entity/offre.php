@@ -24,21 +24,21 @@ class offre
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="string", length=255)
+     * @ORM\Column(name="description", nullable=true, type="string", length=255)
      */
     private $description;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="datedebut", type="date")
+     * @ORM\Column(name="datedebut", type="string", length=255)
      */
     private $datedebut;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="datefin", type="date")
+     * @ORM\Column(name="datefin", type="string", length=255)
      */
     private $datefin;
 
@@ -86,7 +86,7 @@ class offre
     /**
      * Set datedebut
      *
-     * @param \DateTime $datedebut
+     * @param string $datedebut
      * @return offre
      */
     public function setDatedebut($datedebut)
@@ -99,7 +99,7 @@ class offre
     /**
      * Get datedebut
      *
-     * @return \DateTime 
+     * @return string 
      */
     public function getDatedebut()
     {
@@ -109,7 +109,7 @@ class offre
     /**
      * Set datefin
      *
-     * @param \DateTime $datefin
+     * @param string $datefin
      * @return offre
      */
     public function setDatefin($datefin)
@@ -122,7 +122,7 @@ class offre
     /**
      * Get datefin
      *
-     * @return \DateTime 
+     * @return string 
      */
     public function getDatefin()
     {

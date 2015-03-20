@@ -24,7 +24,7 @@ class Niveau
     /**
      * @var string
      *
-     * @ORM\Column(name="libelle", type="string", length=255)
+     * @ORM\Column(name="libelle", nullable=false, unique=true, type="string", length=255)
      */
     private $libelle;
 
