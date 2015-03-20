@@ -1,0 +1,3 @@
+mega_casting_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: MegaCastingBundle:Default:index }
