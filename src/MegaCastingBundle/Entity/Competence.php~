@@ -1,0 +1,65 @@
+<?php
+
+namespace MegaCastingBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Competence
+ *
+ * @ORM\Table("competence")
+ * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\CompetenceRepository")
+ */
+class Competence
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+    
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="TypeCompetence", inversedBy="competences", cascade={"remove"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $typeCompetence;
+
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set typeCompetence
+     *
+     * @param \MegaCastingBundle\Entity\TypeCompetence $typeCompetence
+     * @return Competence
+     */
+    public function setTypeCompetence(\MegaCastingBundle\Entity\TypeCompetence $typeCompetence = null)
+    {
+        $this->typeCompetence = $typeCompetence;
+
+        return $this;
+    }
+
+    /**
+     * Get typeCompetence
+     *
+     * @return \MegaCastingBundle\Entity\TypeCompetence 
+     */
+    public function getTypeCompetence()
+    {
+        return $this->typeCompetence;
+    }
+}
