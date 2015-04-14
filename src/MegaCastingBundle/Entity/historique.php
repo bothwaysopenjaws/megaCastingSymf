@@ -5,12 +5,12 @@ namespace MegaCastingBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * historique
+ * Historique
  *
  * @ORM\Table("historique")
- * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\historiqueRepository")
+ * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\HistoriqueRepository")
  */
-class historique
+class Historique
 {
     /**
      * @var integer
@@ -24,21 +24,21 @@ class historique
     /**
      * @var string
      *
-     * @ORM\Column(name="societe", nullable=true, type="string", length=255)
+     * @ORM\Column(name="societe", type="string", length=255)
      */
     private $societe;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="dateDebut", type="string", length=255)
+     * @ORM\Column(name="dateDebut", type="date")
      */
     private $dateDebut;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="dateFin", type="string", length=255)
+     * @ORM\Column(name="dateFin", type="date")
      */
     private $dateFin;
 
@@ -48,6 +48,13 @@ class historique
      * @ORM\Column(name="description", type="text")
      */
     private $description;
+    
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Utilisateur", inversedBy="historiques", cascade={"remove"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $utilisateur;
 
 
     /**
@@ -64,7 +71,7 @@ class historique
      * Set societe
      *
      * @param string $societe
-     * @return historique
+     * @return Historique
      */
     public function setSociete($societe)
     {
@@ -86,8 +93,8 @@ class historique
     /**
      * Set dateDebut
      *
-     * @param string $dateDebut
-     * @return historique
+     * @param \DateTime $dateDebut
+     * @return Historique
      */
     public function setDateDebut($dateDebut)
     {
@@ -99,7 +106,7 @@ class historique
     /**
      * Get dateDebut
      *
-     * @return string 
+     * @return \DateTime 
      */
     public function getDateDebut()
     {
@@ -107,10 +114,10 @@ class historique
     }
 
     /**
-     * Set datefin
+     * Set dateFin
      *
-     * @param string $datefin
-     * @return historique
+     * @param \DateTime $dateFin
+     * @return Historique
      */
     public function setDateFin($dateFin)
     {
@@ -122,7 +129,7 @@ class historique
     /**
      * Get dateFin
      *
-     * @return string 
+     * @return \DateTime 
      */
     public function getDateFin()
     {
@@ -133,7 +140,7 @@ class historique
      * Set description
      *
      * @param string $description
-     * @return historique
+     * @return Historique
      */
     public function setDescription($description)
     {
@@ -150,5 +157,30 @@ class historique
     public function getDescription()
     {
         return $this->description;
+    }
+
+
+
+    /**
+     * Set utilisateur
+     *
+     * @param \MegaCastingBundle\Entity\Utilisateur $utilisateur
+     * @return Historique
+     */
+    public function setUtilisateur(\MegaCastingBundle\Entity\Utilisateur $utilisateur = null)
+    {
+        $this->utilisateur = $utilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Get utilisateur
+     *
+     * @return \MegaCastingBundle\Entity\Utilisateur 
+     */
+    public function getUtilisateur()
+    {
+        return $this->utilisateur;
     }
 }

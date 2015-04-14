@@ -5,12 +5,12 @@ namespace MegaCastingBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * metier
+ * Metier
  *
  * @ORM\Table("metier")
- * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\metierRepository")
+ * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\MetierRepository")
  */
-class metier
+class Metier
 {
     /**
      * @var integer
@@ -31,9 +31,26 @@ class metier
     /**
      * @var string
      *
-     * @ORM\Column(name="description", nullable=true, unique=true, type="text")
+     * @ORM\Column(name="description", type="text")
      */
     private $description;
+    
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Domaine", inversedBy="metiers", cascade={"remove"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $domaine;
+    
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Offre", mappedBy="metier", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $offres;
+    
+
+    
 
 
     /**
@@ -50,7 +67,7 @@ class metier
      * Set libelle
      *
      * @param string $libelle
-     * @return metier
+     * @return Metier
      */
     public function setLibelle($libelle)
     {
@@ -73,7 +90,7 @@ class metier
      * Set description
      *
      * @param string $description
-     * @return metier
+     * @return Metier
      */
     public function setDescription($description)
     {
@@ -90,5 +107,68 @@ class metier
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set domaine
+     *
+     * @param \MegaCastingBundle\Entity\Domaine $domaine
+     * @return Metier
+     */
+    public function setDomaine(\MegaCastingBundle\Entity\Domaine $domaine = null)
+    {
+        $this->domaine = $domaine;
+
+        return $this;
+    }
+
+    /**
+     * Get domaine
+     *
+     * @return \MegaCastingBundle\Entity\Domaine 
+     */
+    public function getDomaine()
+    {
+        return $this->domaine;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->offres = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add offres
+     *
+     * @param \MegaCastingBundle\Entity\Offre $offres
+     * @return Metier
+     */
+    public function addOffre(\MegaCastingBundle\Entity\Offre $offres)
+    {
+        $this->offres[] = $offres;
+
+        return $this;
+    }
+
+    /**
+     * Remove offres
+     *
+     * @param \MegaCastingBundle\Entity\Offre $offres
+     */
+    public function removeOffre(\MegaCastingBundle\Entity\Offre $offres)
+    {
+        $this->offres->removeElement($offres);
+    }
+
+    /**
+     * Get offres
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getOffres()
+    {
+        return $this->offres;
     }
 }

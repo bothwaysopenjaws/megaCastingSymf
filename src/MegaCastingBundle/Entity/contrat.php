@@ -5,12 +5,12 @@ namespace MegaCastingBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * contrat
+ * Contrat
  *
- * @ORM\Table("contrat)
- * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\contratRepository")
+ * @ORM\Table("contrat")
+ * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\ContratRepository")
  */
-class contrat
+class Contrat
 {
     /**
      * @var integer
@@ -24,18 +24,29 @@ class contrat
     /**
      * @var string
      *
-     * @ORM\Column(name="nom", type="string", length=255)
+     * @ORM\Column(name="libelle", type="string", length=255)
      */
-    private $nom;
+    private $libelle;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="clause", nullable=true, type="text")
+     * @ORM\Column(name="clause", type="string", length=255)
      */
     private $clause;
-
-
+   
+    /**
+     * @ORM\OneToMany(targetEntity="Offre", mappedBy="contrat", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $offres;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="TypeContrat", inversedBy="contrats", cascade={"remove"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $typeContrat;
+    
     /**
      * Get id
      *
@@ -47,33 +58,33 @@ class contrat
     }
 
     /**
-     * Set nom
+     * Set libelle
      *
-     * @param string $nom
-     * @return contrat
+     * @param string $libelle
+     * @return Contrat
      */
-    public function setNom($nom)
+    public function setLibelle($libelle)
     {
-        $this->nom = $nom;
+        $this->libelle = $libelle;
 
         return $this;
     }
 
     /**
-     * Get nom
+     * Get libelle
      *
      * @return string 
      */
-    public function getNom()
+    public function getLibelle()
     {
-        return $this->nom;
+        return $this->libelle;
     }
 
     /**
      * Set clause
      *
      * @param string $clause
-     * @return contrat
+     * @return Contrat
      */
     public function setClause($clause)
     {
@@ -90,5 +101,68 @@ class contrat
     public function getClause()
     {
         return $this->clause;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->offres = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add offres
+     *
+     * @param \megaCasting\MegaCastingBundle\Entity\Offre $offres
+     * @return Contrat
+     */
+    public function addOffre(\megaCasting\MegaCastingBundle\Entity\Offre $offres)
+    {
+        $this->offres[] = $offres;
+
+        return $this;
+    }
+
+    /**
+     * Remove offres
+     *
+     * @param \megaCasting\MegaCastingBundle\Entity\Offre $offres
+     */
+    public function removeOffre(\megaCasting\MegaCastingBundle\Entity\Offre $offres)
+    {
+        $this->offres->removeElement($offres);
+    }
+
+    /**
+     * Get offres
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getOffres()
+    {
+        return $this->offres;
+    }
+
+    /**
+     * Set typeContrat
+     *
+     * @param \MegaCastingBundle\Entity\TypeContrat $typeContrat
+     * @return Contrat
+     */
+    public function setTypeContrat(\MegaCastingBundle\Entity\TypeContrat $typeContrat = null)
+    {
+        $this->typeContrat = $typeContrat;
+
+        return $this;
+    }
+
+    /**
+     * Get typeContrat
+     *
+     * @return \MegaCastingBundle\Entity\TypeContrat 
+     */
+    public function getTypeContrat()
+    {
+        return $this->typeContrat;
     }
 }

@@ -57,16 +57,43 @@ class Utilisateur
     private $dateNaissance;
     
     /**
-     * @ORM\ManyToOne(targetEntity="Historique", inversedBy="utilisateur", cascade={"remove"})
+     * @ORM\OneToMany(targetEntity="Historique", mappedBy="utilisateur", cascade={"persist"}, orphanRemoval=true)
      * @ORM\JoinColumn(nullable=true)
      */
     private $historiques;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Adresse", mappedBy="utilisateur", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $adresses;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Competence", mappedBy="utilisateur", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $competences;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Media", mappedBy="utilisateur", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $medias;
+    
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Abonnement", mappedBy="utilisateur", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $abonnements;
+
     
     /**
      * @ORM\ManyToOne(targetEntity="TypeUtilisateur", inversedBy="utilisateurs", cascade={"remove"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $typeUtilisateur;
+    
     
     
 
@@ -196,13 +223,113 @@ class Utilisateur
         return $this->dateNaissance;
     }
 
+
+    /**
+     * Add competences
+     *
+     * @param \MegaCastingBundle\Entity\Competence $competences
+     * @return Utilisateur
+     */
+    public function addCompetence(\MegaCastingBundle\Entity\Competence $competences)
+    {
+        $this->competences[] = $competences;
+
+        return $this;
+    }
+
+    /**
+     * Remove competences
+     *
+     * @param \MegaCastingBundle\Entity\Competence $competences
+     */
+    public function removeCompetence(\MegaCastingBundle\Entity\Competence $competences)
+    {
+        $this->competences->removeElement($competences);
+    }
+
+    /**
+     * Get competences
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCompetences()
+    {
+        return $this->competences;
+    }
+
+    /**
+     * Add medias
+     *
+     * @param \MegaCastingBundle\Entity\Media $medias
+     * @return Utilisateur
+     */
+    public function addMedia(\MegaCastingBundle\Entity\Media $medias)
+    {
+        $this->medias[] = $medias;
+
+        return $this;
+    }
+
+    /**
+     * Remove medias
+     *
+     * @param \MegaCastingBundle\Entity\Media $medias
+     */
+    public function removeMedia(\MegaCastingBundle\Entity\Media $medias)
+    {
+        $this->medias->removeElement($medias);
+    }
+
+    /**
+     * Get medias
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getMedias()
+    {
+        return $this->medias;
+    }
+
+    /**
+     * Add abonnements
+     *
+     * @param \MegaCastingBundle\Entity\Abonnement $abonnements
+     * @return Utilisateur
+     */
+    public function addAbonnement(\MegaCastingBundle\Entity\Abonnement $abonnements)
+    {
+        $this->abonnements[] = $abonnements;
+
+        return $this;
+    }
+
+    /**
+     * Remove abonnements
+     *
+     * @param \MegaCastingBundle\Entity\Abonnement $abonnements
+     */
+    public function removeAbonnement(\MegaCastingBundle\Entity\Abonnement $abonnements)
+    {
+        $this->abonnements->removeElement($abonnements);
+    }
+
+    /**
+     * Get abonnements
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getAbonnements()
+    {
+        return $this->abonnements;
+    }
+
     /**
      * Set typeUtilisateur
      *
      * @param \MegaCastingBundle\Entity\TypeUtilisateur $typeUtilisateur
      * @return Utilisateur
      */
-    public function setTypeUtilisateur(\MegaCastingBundle\Entity\TypeUtilisateur $typeUtilisateur = null)
+    public function setTypeUtilisateur(\MegaCastingBundle\Entity\TypeUtilisateur $typeUtilisateur)
     {
         $this->typeUtilisateur = $typeUtilisateur;
 
@@ -217,5 +344,38 @@ class Utilisateur
     public function getTypeUtilisateur()
     {
         return $this->typeUtilisateur;
+    }
+
+    /**
+     * Add adresses
+     *
+     * @param \MegaCastingBundle\Entity\Adresse $adresses
+     * @return Utilisateur
+     */
+    public function addAdress(\MegaCastingBundle\Entity\Adresse $adresses)
+    {
+        $this->adresses[] = $adresses;
+
+        return $this;
+    }
+
+    /**
+     * Remove adresses
+     *
+     * @param \MegaCastingBundle\Entity\Adresse $adresses
+     */
+    public function removeAdress(\MegaCastingBundle\Entity\Adresse $adresses)
+    {
+        $this->adresses->removeElement($adresses);
+    }
+
+    /**
+     * Get adresses
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getAdresses()
+    {
+        return $this->adresses;
     }
 }

@@ -5,12 +5,12 @@ namespace MegaCastingBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * adresse
+ * Adresse
  *
  * @ORM\Table("adresse")
- * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\adresseRepository")
+ * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\AdresseRepository")
  */
-class adresse
+class Adresse
 {
     /**
      * @var integer
@@ -45,9 +45,15 @@ class adresse
     /**
      * @var string
      *
-     * @ORM\Column(name="pays", nullable=true, type="string", length=255)
+     * @ORM\Column(name="pays", type="string", length=255)
      */
     private $pays;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="utilisateur", inversedBy="adresses", cascade={"remove"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $utilisateur;
 
 
     /**
@@ -64,7 +70,7 @@ class adresse
      * Set rue
      *
      * @param string $rue
-     * @return adresse
+     * @return Adresse
      */
     public function setRue($rue)
     {
@@ -87,7 +93,7 @@ class adresse
      * Set ville
      *
      * @param string $ville
-     * @return adresse
+     * @return Adresse
      */
     public function setVille($ville)
     {
@@ -110,7 +116,7 @@ class adresse
      * Set codePostal
      *
      * @param string $codePostal
-     * @return adresse
+     * @return Adresse
      */
     public function setCodePostal($codePostal)
     {
@@ -133,7 +139,7 @@ class adresse
      * Set pays
      *
      * @param string $pays
-     * @return adresse
+     * @return Adresse
      */
     public function setPays($pays)
     {
@@ -150,5 +156,28 @@ class adresse
     public function getPays()
     {
         return $this->pays;
+    }
+
+    /**
+     * Set utilisateur
+     *
+     * @param \MegaCastingBundle\Entity\utilisateur $utilisateur
+     * @return Adresse
+     */
+    public function setUtilisateur(\MegaCastingBundle\Entity\utilisateur $utilisateur)
+    {
+        $this->utilisateur = $utilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Get utilisateur
+     *
+     * @return \MegaCastingBundle\Entity\utilisateur 
+     */
+    public function getUtilisateur()
+    {
+        return $this->utilisateur;
     }
 }

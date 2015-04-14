@@ -115,4 +115,37 @@ class TypeUtilisateur
     {
         return $this->utilisateurs;
     }
+
+    /**
+     * Add historiques
+     *
+     * @param \MegaCastingBundle\Entity\Historique $historiques
+     * @return TypeUtilisateur
+     */
+    public function addHistorique(\MegaCastingBundle\Entity\Historique $historiques)
+    {
+        $this->historiques[] = $historiques;
+
+        return $this;
+    }
+
+    /**
+     * Remove historiques
+     *
+     * @param \MegaCastingBundle\Entity\Historique $historiques
+     */
+    public function removeHistorique(\MegaCastingBundle\Entity\Historique $historiques)
+    {
+        $this->historiques->removeElement($historiques);
+    }
+
+    /**
+     * Get historiques
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getHistoriques()
+    {
+        return $this->historiques;
+    }
 }

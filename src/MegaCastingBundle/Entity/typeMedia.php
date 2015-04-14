@@ -5,12 +5,12 @@ namespace MegaCastingBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * typeMedia
+ * TypeMedia
  *
- * @ORM\Table("typemdia")
- * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\typeMediaRepository")
+ * @ORM\Table("typemedia")
+ * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\TypeMediaRepository")
  */
-class typeMedia
+class TypeMedia
 {
     /**
      * @var integer
@@ -24,9 +24,17 @@ class typeMedia
     /**
      * @var string
      *
-     * @ORM\Column(name="libelle", unique=true, type="string", length=255)
+     * @ORM\Column(name="libelle", type="string", length=255)
      */
     private $libelle;
+    
+    
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Media", mappedBy="typeMedia", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $medias;
 
 
     /**
@@ -43,7 +51,7 @@ class typeMedia
      * Set libelle
      *
      * @param string $libelle
-     * @return typeMedia
+     * @return TypeMedia
      */
     public function setLibelle($libelle)
     {
@@ -60,5 +68,45 @@ class typeMedia
     public function getLibelle()
     {
         return $this->libelle;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->medias = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add medias
+     *
+     * @param \MegaCastingBundle\Entity\Media $medias
+     * @return TypeMedia
+     */
+    public function addMedia(\MegaCastingBundle\Entity\Media $medias)
+    {
+        $this->medias[] = $medias;
+
+        return $this;
+    }
+
+    /**
+     * Remove medias
+     *
+     * @param \MegaCastingBundle\Entity\Media $medias
+     */
+    public function removeMedia(\MegaCastingBundle\Entity\Media $medias)
+    {
+        $this->medias->removeElement($medias);
+    }
+
+    /**
+     * Get medias
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getMedias()
+    {
+        return $this->medias;
     }
 }

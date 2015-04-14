@@ -5,12 +5,13 @@ namespace MegaCastingBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * abonnement
+ * Abonnement
  *
  * @ORM\Table("abonnement")
- * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\abonnementRepository")
+ * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\AbonnementRepository")
  */
-class abonnement
+
+class Abonnement
 {
     /**
      * @var integer
@@ -20,14 +21,35 @@ class abonnement
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+    
+    
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateSouscription", type="date")
+     */
+    private $dateSouscription;
 
     /**
-     * @var string
+     * @var integer
      *
-     * @ORM\Column(name="restant", type="string", length=255)
+     * @ORM\Column(name="restant", type="integer")
      */
     private $restant;
-
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="TypeAbonnement", inversedBy="abonnements", cascade={"remove"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $typeAbonnement;
+    
+    
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Utilisateur", inversedBy="abonnements", cascade={"remove"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $utilisateur;
 
     /**
      * Get id
@@ -42,8 +64,8 @@ class abonnement
     /**
      * Set restant
      *
-     * @param string $restant
-     * @return abonnement
+     * @param integer $restant
+     * @return Abonnement
      */
     public function setRestant($restant)
     {
@@ -55,10 +77,79 @@ class abonnement
     /**
      * Get restant
      *
-     * @return string 
+     * @return integer 
      */
     public function getRestant()
     {
         return $this->restant;
+    }
+
+    /**
+     * Set typeAbonnement
+     *
+     * @param \MegaCastingBundle\Entity\TypeAbonnement $typeAbonnement
+     * @return Abonnement
+     */
+    public function setTypeAbonnement(\MegaCastingBundle\Entity\TypeAbonnement $typeAbonnement = null)
+    {
+        $this->typeAbonnement = $typeAbonnement;
+
+        return $this;
+    }
+
+    /**
+     * Get typeAbonnement
+     *
+     * @return \MegaCastingBundle\Entity\TypeAbonnement 
+     */
+    public function getTypeAbonnement()
+    {
+        return $this->typeAbonnement;
+    }
+
+    /**
+     * Set dateSouscription
+     *
+     * @param \DateTime $dateSouscription
+     * @return Abonnement
+     */
+    public function setDateSouscription($dateSouscription)
+    {
+        $this->dateSouscription = $dateSouscription;
+
+        return $this;
+    }
+
+    /**
+     * Get dateSouscription
+     *
+     * @return \DateTime 
+     */
+    public function getDateSouscription()
+    {
+        return $this->dateSouscription;
+    }
+
+    /**
+     * Set utilisateur
+     *
+     * @param \MegaCastingBundle\Entity\Utilisateur $utilisateur
+     * @return Abonnement
+     */
+    public function setUtilisateur(\MegaCastingBundle\Entity\Utilisateur $utilisateur)
+    {
+        $this->utilisateur = $utilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Get utilisateur
+     *
+     * @return \MegaCastingBundle\Entity\Utilisateur 
+     */
+    public function getUtilisateur()
+    {
+        return $this->utilisateur;
     }
 }

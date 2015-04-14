@@ -5,12 +5,12 @@ namespace MegaCastingBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * offre
+ * Offre
  *
  * @ORM\Table("offre")
- * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\offreRepository")
+ * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\OffreRepository")
  */
-class offre
+class Offre
 {
     /**
      * @var integer
@@ -24,21 +24,21 @@ class offre
     /**
      * @var string
      *
-     * @ORM\Column(name="description", nullable=true, type="string", length=255)
+     * @ORM\Column(name="description", type="text")
      */
     private $description;
 
     /**
-     * @var string
+     * @var \DateTime
      *
-     * @ORM\Column(name="datedebut", type="string", length=255)
+     * @ORM\Column(name="dateDebut", type="datetime")
      */
-    private $datedebut;
+    private $dateDebut;
 
     /**
-     * @var string
+     * @var \DateTime
      *
-     * @ORM\Column(name="datefin", type="string", length=255)
+     * @ORM\Column(name="datefin", type="datetime")
      */
     private $datefin;
 
@@ -48,7 +48,23 @@ class offre
      * @ORM\Column(name="duree", type="string", length=255)
      */
     private $duree;
+    
+    
 
+    
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Contrat", inversedBy="offres", cascade={"remove"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $contrat;
+    
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Metier", inversedBy="offres", cascade={"remove"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $metier;
 
     /**
      * Get id
@@ -64,7 +80,7 @@ class offre
      * Set description
      *
      * @param string $description
-     * @return offre
+     * @return Offre
      */
     public function setDescription($description)
     {
@@ -84,33 +100,33 @@ class offre
     }
 
     /**
-     * Set datedebut
+     * Set dateDebut
      *
-     * @param string $datedebut
-     * @return offre
+     * @param \DateTime $dateDebut
+     * @return Offre
      */
-    public function setDatedebut($datedebut)
+    public function setDateDebut($dateDebut)
     {
-        $this->datedebut = $datedebut;
+        $this->dateDebut = $dateDebut;
 
         return $this;
     }
 
     /**
-     * Get datedebut
+     * Get dateDebut
      *
-     * @return string 
+     * @return \DateTime 
      */
-    public function getDatedebut()
+    public function getDateDebut()
     {
-        return $this->datedebut;
+        return $this->dateDebut;
     }
 
     /**
      * Set datefin
      *
-     * @param string $datefin
-     * @return offre
+     * @param \DateTime $datefin
+     * @return Offre
      */
     public function setDatefin($datefin)
     {
@@ -122,7 +138,7 @@ class offre
     /**
      * Get datefin
      *
-     * @return string 
+     * @return \DateTime 
      */
     public function getDatefin()
     {
@@ -133,7 +149,7 @@ class offre
      * Set duree
      *
      * @param string $duree
-     * @return offre
+     * @return Offre
      */
     public function setDuree($duree)
     {
@@ -150,5 +166,51 @@ class offre
     public function getDuree()
     {
         return $this->duree;
+    }
+
+    /**
+     * Set contrat
+     *
+     * @param \megaCasting\MegaCastingBundle\Entity\Contrat $contrat
+     * @return Offre
+     */
+    public function setContrat(\megaCasting\MegaCastingBundle\Entity\Contrat $contrat = null)
+    {
+        $this->contrat = $contrat;
+
+        return $this;
+    }
+
+    /**
+     * Get contrat
+     *
+     * @return \megaCasting\MegaCastingBundle\Entity\Contrat 
+     */
+    public function getContrat()
+    {
+        return $this->contrat;
+    }
+
+    /**
+     * Set metier
+     *
+     * @param \MegaCastingBundle\Entity\Metier $metier
+     * @return Offre
+     */
+    public function setMetier(\MegaCastingBundle\Entity\Metier $metier = null)
+    {
+        $this->metier = $metier;
+
+        return $this;
+    }
+
+    /**
+     * Get metier
+     *
+     * @return \MegaCastingBundle\Entity\Metier 
+     */
+    public function getMetier()
+    {
+        return $this->metier;
     }
 }

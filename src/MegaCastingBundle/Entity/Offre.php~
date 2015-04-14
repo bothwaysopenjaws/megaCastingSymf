@@ -58,7 +58,13 @@ class Offre
      * @ORM\JoinColumn(nullable=true)
      */
     private $contrat;
-
+    
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Metier", inversedBy="offres", cascade={"remove"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $metier;
 
     /**
      * Get id
@@ -183,5 +189,28 @@ class Offre
     public function getContrat()
     {
         return $this->contrat;
+    }
+
+    /**
+     * Set metier
+     *
+     * @param \MegaCastingBundle\Entity\Metier $metier
+     * @return Offre
+     */
+    public function setMetier(\MegaCastingBundle\Entity\Metier $metier = null)
+    {
+        $this->metier = $metier;
+
+        return $this;
+    }
+
+    /**
+     * Get metier
+     *
+     * @return \MegaCastingBundle\Entity\Metier 
+     */
+    public function getMetier()
+    {
+        return $this->metier;
     }
 }

@@ -48,7 +48,13 @@ class Candidature
      * @ORM\Column(name="urlLettreMotivation", type="string", length=255)
      */
     private $urlLettreMotivation;
-
+    
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="datetime")
+     */
+    private $date;
 
     /**
      * Get id
@@ -150,5 +156,28 @@ class Candidature
     public function getUrlLettreMotivation()
     {
         return $this->urlLettreMotivation;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     * @return Candidature
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime 
+     */
+    public function getDate()
+    {
+        return $this->date;
     }
 }

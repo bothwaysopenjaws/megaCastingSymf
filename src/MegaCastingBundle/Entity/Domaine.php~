@@ -33,6 +33,13 @@ class Domaine
      * @ORM\ManyToMany(targetEntity="Utilisateur", cascade={"persist"})
      */
     private $utilisateurs;
+    
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Metier", mappedBy="domaine", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $metiers;
 
 
     /**
@@ -106,5 +113,38 @@ class Domaine
     public function getUtilisateurs()
     {
         return $this->utilisateurs;
+    }
+
+    /**
+     * Add metiers
+     *
+     * @param \MegaCastingBundle\Entity\Metier $metiers
+     * @return Domaine
+     */
+    public function addMetier(\MegaCastingBundle\Entity\Metier $metiers)
+    {
+        $this->metiers[] = $metiers;
+
+        return $this;
+    }
+
+    /**
+     * Remove metiers
+     *
+     * @param \MegaCastingBundle\Entity\Metier $metiers
+     */
+    public function removeMetier(\MegaCastingBundle\Entity\Metier $metiers)
+    {
+        $this->metiers->removeElement($metiers);
+    }
+
+    /**
+     * Get metiers
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getMetiers()
+    {
+        return $this->metiers;
     }
 }

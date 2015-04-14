@@ -27,6 +27,21 @@ class Competence
      * @ORM\JoinColumn(nullable=true)
      */
     private $typeCompetence;
+    
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Utilisateur", inversedBy="competences", cascade={"remove"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $utilisateur;
+    
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Niveau", cascade={"remove"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $niveau;
+   
 
 
 
@@ -61,5 +76,52 @@ class Competence
     public function getTypeCompetence()
     {
         return $this->typeCompetence;
+    }
+
+
+    /**
+     * Set utilisateur
+     *
+     * @param \MegaCastingBundle\Entity\Utilisateur $utilisateur
+     * @return Competence
+     */
+    public function setUtilisateur(\MegaCastingBundle\Entity\Utilisateur $utilisateur = null)
+    {
+        $this->utilisateur = $utilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Get utilisateur
+     *
+     * @return \MegaCastingBundle\Entity\Utilisateur 
+     */
+    public function getUtilisateur()
+    {
+        return $this->utilisateur;
+    }
+
+    /**
+     * Set niveau
+     *
+     * @param \MegaCastingBundle\Entity\Niveau $niveau
+     * @return Competence
+     */
+    public function setNiveau(\MegaCastingBundle\Entity\Niveau $niveau = null)
+    {
+        $this->niveau = $niveau;
+
+        return $this;
+    }
+
+    /**
+     * Get niveau
+     *
+     * @return \MegaCastingBundle\Entity\Niveau 
+     */
+    public function getNiveau()
+    {
+        return $this->niveau;
     }
 }

@@ -5,12 +5,12 @@ namespace MegaCastingBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * media
+ * Media
  *
  * @ORM\Table("media")
- * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\mediaRepository")
+ * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\MediaRepository")
  */
-class media
+class Media
 {
     /**
      * @var integer
@@ -31,9 +31,23 @@ class media
     /**
      * @var string
      *
-     * @ORM\Column(name="url", nullable=true, type="string", length=255)
+     * @ORM\Column(name="url", type="string", length=255)
      */
     private $url;
+    
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="TypeMedia", inversedBy="medias", cascade={"remove"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $typeMedia;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="utilisateur", inversedBy="medias", cascade={"remove"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $utilisateur;
+    
 
 
     /**
@@ -50,7 +64,7 @@ class media
      * Set nom
      *
      * @param string $nom
-     * @return media
+     * @return Media
      */
     public function setNom($nom)
     {
@@ -73,7 +87,7 @@ class media
      * Set url
      *
      * @param string $url
-     * @return media
+     * @return Media
      */
     public function setUrl($url)
     {
@@ -90,5 +104,51 @@ class media
     public function getUrl()
     {
         return $this->url;
+    }
+
+    /**
+     * Set typeMedia
+     *
+     * @param \MegaCastingBundle\Entity\TypeMedia $typeMedia
+     * @return Media
+     */
+    public function setTypeMedia(\MegaCastingBundle\Entity\TypeMedia $typeMedia = null)
+    {
+        $this->typeMedia = $typeMedia;
+
+        return $this;
+    }
+
+    /**
+     * Get typeMedia
+     *
+     * @return \MegaCastingBundle\Entity\TypeMedia 
+     */
+    public function getTypeMedia()
+    {
+        return $this->typeMedia;
+    }
+
+    /**
+     * Set utilisateur
+     *
+     * @param \MegaCastingBundle\Entity\utilisateur $utilisateur
+     * @return Media
+     */
+    public function setUtilisateur(\MegaCastingBundle\Entity\utilisateur $utilisateur)
+    {
+        $this->utilisateur = $utilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Get utilisateur
+     *
+     * @return \MegaCastingBundle\Entity\utilisateur 
+     */
+    public function getUtilisateur()
+    {
+        return $this->utilisateur;
     }
 }

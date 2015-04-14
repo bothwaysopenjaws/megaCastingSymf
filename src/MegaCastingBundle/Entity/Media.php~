@@ -42,6 +42,12 @@ class Media
      */
     private $typeMedia;
     
+    /**
+     * @ORM\ManyToOne(targetEntity="utilisateur", inversedBy="medias", cascade={"remove"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $utilisateur;
+    
 
 
     /**
@@ -121,5 +127,28 @@ class Media
     public function getTypeMedia()
     {
         return $this->typeMedia;
+    }
+
+    /**
+     * Set utilisateur
+     *
+     * @param \MegaCastingBundle\Entity\utilisateur $utilisateur
+     * @return Media
+     */
+    public function setUtilisateur(\MegaCastingBundle\Entity\utilisateur $utilisateur)
+    {
+        $this->utilisateur = $utilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Get utilisateur
+     *
+     * @return \MegaCastingBundle\Entity\utilisateur 
+     */
+    public function getUtilisateur()
+    {
+        return $this->utilisateur;
     }
 }
