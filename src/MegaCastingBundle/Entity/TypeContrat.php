@@ -30,10 +30,10 @@ class TypeContrat
     
     
     /**
-     * @ORM\OneToMany(targetEntity="Contrat", mappedBy="typeContrat", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="Offre", mappedBy="typeContrat", cascade={"persist"}, orphanRemoval=true)
      * @ORM\JoinColumn(nullable=true)
      */
-    private $contrats;
+    private $offres;
 
 
     /**
@@ -73,39 +73,42 @@ class TypeContrat
      */
     public function __construct()
     {
-        $this->contrats = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->offres = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+
+
+
     /**
-     * Add contrats
+     * Add offres
      *
-     * @param \MegaCastingBundle\Entity\Contrat $contrats
+     * @param \MegaCastingBundle\Entity\Offre $offres
      * @return TypeContrat
      */
-    public function addContrat(\MegaCastingBundle\Entity\Contrat $contrats)
+    public function addOffre(\MegaCastingBundle\Entity\Offre $offres)
     {
-        $this->contrats[] = $contrats;
-
+        $this->offres[] = $offres;
+    
         return $this;
     }
 
     /**
-     * Remove contrats
+     * Remove offres
      *
-     * @param \MegaCastingBundle\Entity\Contrat $contrats
+     * @param \MegaCastingBundle\Entity\Offre $offres
      */
-    public function removeContrat(\MegaCastingBundle\Entity\Contrat $contrats)
+    public function removeOffre(\MegaCastingBundle\Entity\Offre $offres)
     {
-        $this->contrats->removeElement($contrats);
+        $this->offres->removeElement($offres);
     }
 
     /**
-     * Get contrats
+     * Get offres
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getContrats()
+    public function getOffres()
     {
-        return $this->contrats;
+        return $this->offres;
     }
 }

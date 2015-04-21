@@ -422,4 +422,37 @@ class Utilisateur
     {
         return $this->historiques;
     }
+
+    /**
+     * Add multimedias
+     *
+     * @param \MegaCastingBundle\Entity\Multimedia $multimedias
+     * @return Utilisateur
+     */
+    public function addMultimedia(\MegaCastingBundle\Entity\Multimedia $multimedias)
+    {
+        $this->multimedias[] = $multimedias;
+
+        return $this;
+    }
+
+    /**
+     * Remove multimedias
+     *
+     * @param \MegaCastingBundle\Entity\Multimedia $multimedias
+     */
+    public function removeMultimedia(\MegaCastingBundle\Entity\Multimedia $multimedias)
+    {
+        $this->multimedias->removeElement($multimedias);
+    }
+
+    /**
+     * Get multimedias
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getMultimedias()
+    {
+        return $this->multimedias;
+    }
 }

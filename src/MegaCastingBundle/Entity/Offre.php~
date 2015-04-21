@@ -61,10 +61,10 @@ class Offre
     
 
     /**
-     * @ORM\ManyToOne(targetEntity="Contrat", inversedBy="offres", cascade={"remove"})
+     * @ORM\ManyToOne(targetEntity="typeContrat", inversedBy="offres", cascade={"remove"})
      * @ORM\JoinColumn(nullable=true)
      */
-    private $contrat;
+    private $typeContrat;
     
     
     /**
@@ -201,35 +201,7 @@ class Offre
         return $this->duree;
     }
 
-    /**
-     * Set contrat
-     *
-     * @param \megaCasting\MegaCastingBundle\Entity\Contrat $contrat
-     * @return Offre
-     */
-    public function setContrat(\megaCasting\MegaCastingBundle\Entity\Contrat $contrat = null)
-    {
-        $this->contrat = $contrat;
 
-        return $this;
-    }
-
-    /**
-     * Get contrat
-     *
-     * @return \megaCasting\MegaCastingBundle\Entity\Contrat 
-     */
-    public function getContrat()
-    {
-        return $this->contrat;
-    }
-
-    /**
-     * Set metier
-     *
-     * @param \MegaCastingBundle\Entity\Metier $metier
-     * @return Offre
-     */
     public function setMetier(\MegaCastingBundle\Entity\Metier $metier = null)
     {
         $this->metier = $metier;

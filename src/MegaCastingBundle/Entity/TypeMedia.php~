@@ -109,4 +109,14 @@ class TypeMedia
     {
         return $this->$multimedias;
     }
+
+    /**
+     * Get multimedia
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getMultimedia()
+    {
+        return $this->multimedia;
+    }
 }
