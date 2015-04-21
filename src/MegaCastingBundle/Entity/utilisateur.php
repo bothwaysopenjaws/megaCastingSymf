@@ -75,10 +75,10 @@ class Utilisateur
     private $competences;
     
     /**
-     * @ORM\OneToMany(targetEntity="Media", mappedBy="utilisateur", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="Multimedia", mappedBy="utilisateur", cascade={"persist"}, orphanRemoval=true)
      * @ORM\JoinColumn(nullable=true)
      */
-    private $medias;
+    private $multimedias;
     
     
     /**
@@ -421,5 +421,38 @@ class Utilisateur
     public function getHistoriques()
     {
         return $this->historiques;
+    }
+
+    /**
+     * Add multimedias
+     *
+     * @param \MegaCastingBundle\Entity\Multimedia $multimedias
+     * @return Utilisateur
+     */
+    public function addMultimedia(\MegaCastingBundle\Entity\Multimedia $multimedias)
+    {
+        $this->multimedias[] = $multimedias;
+
+        return $this;
+    }
+
+    /**
+     * Remove multimedias
+     *
+     * @param \MegaCastingBundle\Entity\Multimedia $multimedias
+     */
+    public function removeMultimedia(\MegaCastingBundle\Entity\Multimedia $multimedias)
+    {
+        $this->multimedias->removeElement($multimedias);
+    }
+
+    /**
+     * Get multimedias
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getMultimedias()
+    {
+        return $this->multimedias;
     }
 }

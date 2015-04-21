@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * TypeAbonnement
  *
- * @ORM\Table("typeabonnement")
+ * @ORM\Table("typeAbonnement")
  * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\TypeAbonnementRepository")
  */
 class TypeAbonnement

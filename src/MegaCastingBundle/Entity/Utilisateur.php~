@@ -75,10 +75,10 @@ class Utilisateur
     private $competences;
     
     /**
-     * @ORM\OneToMany(targetEntity="Media", mappedBy="utilisateur", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="Multimedia", mappedBy="utilisateur", cascade={"persist"}, orphanRemoval=true)
      * @ORM\JoinColumn(nullable=true)
      */
-    private $medias;
+    private $multimedias;
     
     
     /**
@@ -377,5 +377,49 @@ class Utilisateur
     public function getAdresses()
     {
         return $this->adresses;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->historiques = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->adresses = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->competences = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->medias = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->abonnements = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add historiques
+     *
+     * @param \MegaCastingBundle\Entity\Historique $historiques
+     * @return Utilisateur
+     */
+    public function addHistorique(\MegaCastingBundle\Entity\Historique $historiques)
+    {
+        $this->historiques[] = $historiques;
+
+        return $this;
+    }
+
+    /**
+     * Remove historiques
+     *
+     * @param \MegaCastingBundle\Entity\Historique $historiques
+     */
+    public function removeHistorique(\MegaCastingBundle\Entity\Historique $historiques)
+    {
+        $this->historiques->removeElement($historiques);
+    }
+
+    /**
+     * Get historiques
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getHistoriques()
+    {
+        return $this->historiques;
     }
 }

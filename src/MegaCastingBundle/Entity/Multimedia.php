@@ -5,12 +5,12 @@ namespace MegaCastingBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Media
+ * Multimedia
  *
- * @ORM\Table("media")
- * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\MediaRepository")
+ * @ORM\Table("Multimedia")
+ * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\MultimediaRepository")
  */
-class Media
+class Multimedia
 {
     /**
      * @var integer
@@ -23,31 +23,31 @@ class Media
 
     /**
      * @var string
-     *
      * @ORM\Column(name="nom", type="string", length=255)
+     * 
      */
     private $nom;
 
     /**
+     * 
      * @var string
-     *
+     * 
      * @ORM\Column(name="url", type="string", length=255)
      */
     private $url;
-    
-    
+
     /**
-     * @ORM\ManyToOne(targetEntity="TypeMedia", inversedBy="medias", cascade={"remove"})
+     * 
+     * @ORM\ManyToOne(targetEntity="TypeMedia", inversedBy="multimedias", cascade={"remove"})
      * @ORM\JoinColumn(nullable=true)
      */
     private $typeMedia;
-    
+
     /**
-     * @ORM\ManyToOne(targetEntity="utilisateur", inversedBy="medias", cascade={"remove"})
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity="Utilisateur", inversedBy="multimedias", cascade={"remove"})
+     * @ORM\JoinColumn(nullable=true)
      */
     private $utilisateur;
-    
 
 
     /**
@@ -132,8 +132,8 @@ class Media
     /**
      * Set utilisateur
      *
-     * @param \MegaCastingBundle\Entity\utilisateur $utilisateur
-     * @return Media
+     * @param \MegaCastingBundle\Entity\Utilisateur $utilisateur
+     * @return Multimedia
      */
     public function setUtilisateur(\MegaCastingBundle\Entity\utilisateur $utilisateur)
     {
@@ -145,7 +145,7 @@ class Media
     /**
      * Get utilisateur
      *
-     * @return \MegaCastingBundle\Entity\utilisateur 
+     * @return \MegaCastingBundle\Entity\Utilisateur 
      */
     public function getUtilisateur()
     {

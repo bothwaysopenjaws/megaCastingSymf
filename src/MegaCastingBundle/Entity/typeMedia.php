@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * TypeMedia
  *
- * @ORM\Table("typemedia")
+ * @ORM\Table("typeMedia")
  * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\TypeMediaRepository")
  */
 class TypeMedia
@@ -31,10 +31,10 @@ class TypeMedia
     
     
     /**
-     * @ORM\OneToMany(targetEntity="Media", mappedBy="typeMedia", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="Multimedia", mappedBy="typeMedia", cascade={"persist"}, orphanRemoval=true)
      * @ORM\JoinColumn(nullable=true)
      */
-    private $medias;
+    private $multimedia;
 
 
     /**
@@ -78,14 +78,14 @@ class TypeMedia
     }
 
     /**
-     * Add medias
+     * Add multimedias
      *
-     * @param \MegaCastingBundle\Entity\Media $medias
+     * @param \MegaCastingBundle\Entity\Multimedia $multimedias
      * @return TypeMedia
      */
-    public function addMedia(\MegaCastingBundle\Entity\Media $medias)
+    public function addMultimedia(\MegaCastingBundle\Entity\Media $multimedias)
     {
-        $this->medias[] = $medias;
+        $this->multimedias[] = $multimedias;
 
         return $this;
     }
@@ -93,20 +93,30 @@ class TypeMedia
     /**
      * Remove medias
      *
-     * @param \MegaCastingBundle\Entity\Media $medias
+     * @param \MegaCastingBundle\Entity\Multimedias $multimedias
      */
-    public function removeMedia(\MegaCastingBundle\Entity\Media $medias)
+    public function removeMultimedia(\MegaCastingBundle\Entity\Media $multimedias)
     {
-        $this->medias->removeElement($medias);
+        $this->multimedias->removeElement($multimedias);
     }
 
     /**
-     * Get medias
+     * Get $Multimedias
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getMedias()
+    public function getMultimedias()
     {
-        return $this->medias;
+        return $this->$multimedias;
+    }
+
+    /**
+     * Get multimedia
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getMultimedia()
+    {
+        return $this->multimedia;
     }
 }

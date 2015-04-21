@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * TypeContrat
  *
- * @ORM\Table("typecontrat")
+ * @ORM\Table("typeContrat")
  * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\TypeContratRepository")
  */
 class TypeContrat
