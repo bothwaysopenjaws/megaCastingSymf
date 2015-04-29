@@ -63,10 +63,10 @@ class Utilisateur
     private $historiques;
     
     /**
-     * @ORM\OneToMany(targetEntity="Adresse", mappedBy="utilisateur", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\OneToOne(targetEntity="Adresse", mappedBy="utilisateur", cascade={"persist"}, orphanRemoval=true)
      * @ORM\JoinColumn(nullable=true)
      */
-    private $adresses;
+    private $adresse;
     
     /**
      * @ORM\OneToMany(targetEntity="Competence", mappedBy="utilisateur", cascade={"persist"}, orphanRemoval=true)
@@ -86,6 +86,20 @@ class Utilisateur
      * @ORM\JoinColumn(nullable=true)
      */
     private $abonnements;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telephone", type="string", length=255)
+     */
+    private $telephone;
 
     
     /**
@@ -347,44 +361,11 @@ class Utilisateur
     }
 
     /**
-     * Add adresses
-     *
-     * @param \MegaCastingBundle\Entity\Adresse $adresses
-     * @return Utilisateur
-     */
-    public function addAdress(\MegaCastingBundle\Entity\Adresse $adresses)
-    {
-        $this->adresses[] = $adresses;
-
-        return $this;
-    }
-
-    /**
-     * Remove adresses
-     *
-     * @param \MegaCastingBundle\Entity\Adresse $adresses
-     */
-    public function removeAdress(\MegaCastingBundle\Entity\Adresse $adresses)
-    {
-        $this->adresses->removeElement($adresses);
-    }
-
-    /**
-     * Get adresses
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getAdresses()
-    {
-        return $this->adresses;
-    }
-    /**
      * Constructor
      */
     public function __construct()
     {
         $this->historiques = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->adresses = new \Doctrine\Common\Collections\ArrayCollection();
         $this->competences = new \Doctrine\Common\Collections\ArrayCollection();
         $this->medias = new \Doctrine\Common\Collections\ArrayCollection();
         $this->abonnements = new \Doctrine\Common\Collections\ArrayCollection();

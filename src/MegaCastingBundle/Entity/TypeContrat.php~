@@ -78,4 +78,37 @@ class TypeContrat
 
 
 
+
+    /**
+     * Add offres
+     *
+     * @param \MegaCastingBundle\Entity\Offre $offres
+     * @return TypeContrat
+     */
+    public function addOffre(\MegaCastingBundle\Entity\Offre $offres)
+    {
+        $this->offres[] = $offres;
+    
+        return $this;
+    }
+
+    /**
+     * Remove offres
+     *
+     * @param \MegaCastingBundle\Entity\Offre $offres
+     */
+    public function removeOffre(\MegaCastingBundle\Entity\Offre $offres)
+    {
+        $this->offres->removeElement($offres);
+    }
+
+    /**
+     * Get offres
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getOffres()
+    {
+        return $this->offres;
+    }
 }

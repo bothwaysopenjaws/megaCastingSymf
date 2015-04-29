@@ -49,11 +49,6 @@ class Adresse
      */
     private $pays;
     
-    /**
-     * @ORM\ManyToOne(targetEntity="utilisateur", inversedBy="adresses", cascade={"remove"})
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $utilisateur;
 
 
     /**
@@ -158,26 +153,4 @@ class Adresse
         return $this->pays;
     }
 
-    /**
-     * Set utilisateur
-     *
-     * @param \MegaCastingBundle\Entity\utilisateur $utilisateur
-     * @return Adresse
-     */
-    public function setUtilisateur(\MegaCastingBundle\Entity\utilisateur $utilisateur)
-    {
-        $this->utilisateur = $utilisateur;
-
-        return $this;
-    }
-
-    /**
-     * Get utilisateur
-     *
-     * @return \MegaCastingBundle\Entity\utilisateur 
-     */
-    public function getUtilisateur()
-    {
-        return $this->utilisateur;
-    }
 }

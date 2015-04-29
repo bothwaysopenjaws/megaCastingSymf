@@ -45,6 +45,21 @@ class Candidature
     /**
      * @var string
      *
+     * @ORM\Column(name="email", type="string", length=255)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telephone", type="string", length=255)
+     */
+    private $telephone;
+
+    
+    /**
+     * @var string
+     *
      * @ORM\Column(name="urlLettreMotivation", type="string", length=255)
      */
     private $urlLettreMotivation;

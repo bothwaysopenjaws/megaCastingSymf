@@ -218,4 +218,27 @@ class Offre
     {
         return $this->metier;
     }
+
+    /**
+     * Set typeContrat
+     *
+     * @param \MegaCastingBundle\Entity\typeContrat $typeContrat
+     * @return Offre
+     */
+    public function setTypeContrat(\MegaCastingBundle\Entity\typeContrat $typeContrat = null)
+    {
+        $this->typeContrat = $typeContrat;
+    
+        return $this;
+    }
+
+    /**
+     * Get typeContrat
+     *
+     * @return \MegaCastingBundle\Entity\typeContrat 
+     */
+    public function getTypeContrat()
+    {
+        return $this->typeContrat;
+    }
 }

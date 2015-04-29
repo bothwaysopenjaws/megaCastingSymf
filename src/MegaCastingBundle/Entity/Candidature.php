@@ -45,6 +45,21 @@ class Candidature
     /**
      * @var string
      *
+     * @ORM\Column(name="email", type="string", length=255)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telephone", type="string", length=255)
+     */
+    private $telephone;
+
+    
+    /**
+     * @var string
+     *
      * @ORM\Column(name="urlLettreMotivation", type="string", length=255)
      */
     private $urlLettreMotivation;
@@ -179,5 +194,51 @@ class Candidature
     public function getDate()
     {
         return $this->date;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     * @return Candidature
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string 
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set telephone
+     *
+     * @param string $telephone
+     * @return Candidature
+     */
+    public function setTelephone($telephone)
+    {
+        $this->telephone = $telephone;
+    
+        return $this;
+    }
+
+    /**
+     * Get telephone
+     *
+     * @return string 
+     */
+    public function getTelephone()
+    {
+        return $this->telephone;
     }
 }
