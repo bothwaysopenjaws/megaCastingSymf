@@ -37,6 +37,11 @@ class Metier
     
     
     /**
+     * @ORM\ManyToMany(targetEntity="Utilisateur", cascade={"persist"})
+     */
+    private $utilisateurs;
+    
+    /**
      * @ORM\ManyToOne(targetEntity="Domaine", inversedBy="metiers", cascade={"remove"})
      * @ORM\JoinColumn(nullable=true)
      */
@@ -170,5 +175,38 @@ class Metier
     public function getOffres()
     {
         return $this->offres;
+    }
+
+    /**
+     * Add utilisateurs
+     *
+     * @param \MegaCastingBundle\Entity\Utilisateur $utilisateurs
+     * @return Metier
+     */
+    public function addUtilisateur(\MegaCastingBundle\Entity\Utilisateur $utilisateurs)
+    {
+        $this->utilisateurs[] = $utilisateurs;
+    
+        return $this;
+    }
+
+    /**
+     * Remove utilisateurs
+     *
+     * @param \MegaCastingBundle\Entity\Utilisateur $utilisateurs
+     */
+    public function removeUtilisateur(\MegaCastingBundle\Entity\Utilisateur $utilisateurs)
+    {
+        $this->utilisateurs->removeElement($utilisateurs);
+    }
+
+    /**
+     * Get utilisateurs
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getUtilisateurs()
+    {
+        return $this->utilisateurs;
     }
 }

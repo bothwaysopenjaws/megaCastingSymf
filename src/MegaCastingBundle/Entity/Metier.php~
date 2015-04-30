@@ -37,6 +37,11 @@ class Metier
     
     
     /**
+     * @ORM\ManyToMany(targetEntity="Utilisateur", cascade={"persist"})
+     */
+    private $utilisateurs;
+    
+    /**
      * @ORM\ManyToOne(targetEntity="Domaine", inversedBy="metiers", cascade={"remove"})
      * @ORM\JoinColumn(nullable=true)
      */

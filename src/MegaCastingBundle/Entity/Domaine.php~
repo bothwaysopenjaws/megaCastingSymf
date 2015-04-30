@@ -29,10 +29,6 @@ class Domaine
     private $libelle;
     
     
-    /**
-     * @ORM\ManyToMany(targetEntity="Utilisateur", cascade={"persist"})
-     */
-    private $utilisateurs;
     
     
     /**
@@ -79,7 +75,7 @@ class Domaine
      */
     public function __construct()
     {
-        $this->utilisateurs = new \Doctrine\Common\Collections\ArrayCollection();
+      
     }
 
     /**
@@ -88,33 +84,6 @@ class Domaine
      * @param \MegaCastingBundle\Entity\Utilisateur $utilisateurs
      * @return Domaine
      */
-    public function addUtilisateur(\MegaCastingBundle\Entity\Utilisateur $utilisateurs)
-    {
-        $this->utilisateurs[] = $utilisateurs;
-
-        return $this;
-    }
-
-    /**
-     * Remove utilisateurs
-     *
-     * @param \MegaCastingBundle\Entity\Utilisateur $utilisateurs
-     */
-    public function removeUtilisateur(\MegaCastingBundle\Entity\Utilisateur $utilisateurs)
-    {
-        $this->utilisateurs->removeElement($utilisateurs);
-    }
-
-    /**
-     * Get utilisateurs
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getUtilisateurs()
-    {
-        return $this->utilisateurs;
-    }
-
     /**
      * Add metiers
      *
