@@ -42,8 +42,17 @@ class Offre
      */
     private $datefin;
     
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="intitule", type="string", length=255)
+     */
+    private $intitule;
+
+    
     /*
-     * @var boolean
+     * @var Boolean
      * 
      * @ORM\Column(name="isActive", type="boolean")
      */
@@ -240,5 +249,28 @@ class Offre
     public function getTypeContrat()
     {
         return $this->typeContrat;
+    }
+
+    /**
+     * Set intitule
+     *
+     * @param string $intitule
+     * @return Offre
+     */
+    public function setIntitule($intitule)
+    {
+        $this->intitule = $intitule;
+
+        return $this;
+    }
+
+    /**
+     * Get intitule
+     *
+     * @return string 
+     */
+    public function getIntitule()
+    {
+        return $this->intitule;
     }
 }

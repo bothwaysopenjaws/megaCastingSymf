@@ -483,6 +483,8 @@ class Utilisateur
         return $this->telephone;
     }
 
+
+
     /**
      * Set adresse
      *
@@ -492,7 +494,7 @@ class Utilisateur
     public function setAdresse(\MegaCastingBundle\Entity\Adresse $adresse = null)
     {
         $this->adresse = $adresse;
-    
+
         return $this;
     }
 

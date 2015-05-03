@@ -42,8 +42,17 @@ class Offre
      */
     private $datefin;
     
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="intitule", type="string", length=255)
+     */
+    private $intitule;
+
+    
     /*
-     * @var boolean
+     * @var Boolean
      * 
      * @ORM\Column(name="isActive", type="boolean")
      */
