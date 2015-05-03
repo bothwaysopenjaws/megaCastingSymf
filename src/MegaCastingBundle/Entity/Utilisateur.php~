@@ -20,7 +20,7 @@ class Utilisateur
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
+    
     /**
      * @var string
      *
@@ -57,35 +57,41 @@ class Utilisateur
     private $dateNaissance;
     
     /**
-     * @ORM\OneToMany(targetEntity="Historique", mappedBy="utilisateur", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="Historique", mappedBy="utilisateur", cascade={"persist"}, orphanRemoval=false)
      * @ORM\JoinColumn(nullable=true)
      */
     private $historiques;
     
     /**
-     * @ORM\OneToOne(targetEntity="Adresse", mappedBy="utilisateur", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\OneToOne(targetEntity="Adresse", mappedBy="utilisateur", cascade={"persist"}, orphanRemoval=false)
      * @ORM\JoinColumn(nullable=true)
      */
     private $adresse;
     
     /**
-     * @ORM\OneToMany(targetEntity="Competence", mappedBy="utilisateur", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="Competence", mappedBy="utilisateur", cascade={"persist"}, orphanRemoval=false)
      * @ORM\JoinColumn(nullable=true)
      */
     private $competences;
     
     /**
-     * @ORM\OneToMany(targetEntity="Multimedia", mappedBy="utilisateur", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="Multimedia", mappedBy="utilisateur", cascade={"persist"}, orphanRemoval=false)
      * @ORM\JoinColumn(nullable=true)
      */
     private $multimedias;
     
     
     /**
-     * @ORM\OneToMany(targetEntity="Abonnement", mappedBy="utilisateur", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="Abonnement", mappedBy="utilisateur", cascade={"persist"}, orphanRemoval=false)
      * @ORM\JoinColumn(nullable=true)
      */
     private $abonnements;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Offre", mappedBy="utilisateur", cascade={"persist"}, orphanRemoval=false)
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $offres;
     
     /**
      * @var string
@@ -100,7 +106,6 @@ class Utilisateur
      * @ORM\Column(name="telephone", type="string", length=255)
      */
     private $telephone;
-
     
     /**
      * @ORM\ManyToOne(targetEntity="TypeUtilisateur", inversedBy="utilisateurs", cascade={"remove"})
@@ -506,5 +511,38 @@ class Utilisateur
     public function getAdresse()
     {
         return $this->adresse;
+    }
+
+    /**
+     * Add offres
+     *
+     * @param \MegaCastingBundle\Entity\Offres $offres
+     * @return Utilisateur
+     */
+    public function addOffre(\MegaCastingBundle\Entity\Offres $offres)
+    {
+        $this->offres[] = $offres;
+
+        return $this;
+    }
+
+    /**
+     * Remove offres
+     *
+     * @param \MegaCastingBundle\Entity\Offres $offres
+     */
+    public function removeOffre(\MegaCastingBundle\Entity\Offres $offres)
+    {
+        $this->offres->removeElement($offres);
+    }
+
+    /**
+     * Get offres
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getOffres()
+    {
+        return $this->offres;
     }
 }
