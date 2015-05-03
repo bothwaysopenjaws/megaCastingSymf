@@ -50,13 +50,13 @@ class Offre
      */
     private $intitule;
 
-    
-    /*
-     * @var Boolean
-     * 
+    /**
+     * @var boolean
+     *
      * @ORM\Column(name="isActive", type="boolean")
      */
     private $isActive;
+    
 
     /**
      * @var string
@@ -128,29 +128,7 @@ class Offre
         return $this;
     }
     
-    
-    /**
-     * Set isActive
-     *
-     * @param boolean $isActive
-     * @return Offre
-     */
-    public function setIsActive($isActive)
-    {
-        $this->isActive = $isActive;
-
-        return $this;
-    }
-
-    /**
-     * Get isActive
-     *
-     * @return boolean 
-     */
-    public function getIsActive()
-    {
-        return $this->isActive;
-    }
+   
 
     /**
      * Get dateDebut
@@ -272,5 +250,28 @@ class Offre
     public function getIntitule()
     {
         return $this->intitule;
+    }
+
+    /**
+     * Set isActive
+     *
+     * @param boolean $isActive
+     * @return Offre
+     */
+    public function setIsActive($isActive)
+    {
+        $this->isActive = $isActive;
+
+        return $this;
+    }
+
+    /**
+     * Get isActive
+     *
+     * @return boolean 
+     */
+    public function getIsActive()
+    {
+        return $this->isActive;
     }
 }
