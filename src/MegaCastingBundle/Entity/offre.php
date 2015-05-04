@@ -39,9 +39,9 @@ class Offre
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="datefin", type="datetime")
+     * @ORM\Column(name="datePublication", type="datetime")
      */
-    private $datefin;
+    private $datePublication;
     
     
     /**
@@ -152,24 +152,24 @@ class Offre
     /**
      * Set datefin
      *
-     * @param \DateTime $datefin
+     * @param \DateTime $datePublication
      * @return Offre
      */
-    public function setDatefin($datefin)
+    public function setDatePublication($datePublication)
     {
-        $this->datefin = $datefin;
+        $this->datefin = $datePublication;
 
         return $this;
     }
 
     /**
-     * Get datefin
+     * Get datePublication
      *
      * @return \DateTime 
      */
-    public function getDatefin()
+    public function getdatePublication()
     {
-        return $this->datefin;
+        return $this->datePublication;
     }
     
     
