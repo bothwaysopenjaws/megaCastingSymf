@@ -51,7 +51,7 @@ class Historique
     
     
     /**
-     * @ORM\ManyToOne(targetEntity="Utilisateur", inversedBy="historiques", cascade={"remove"})
+     * @ORM\ManyToOne(targetEntity="Utilisateur", inversedBy="historiques", cascade={"persist"})
      * @ORM\JoinColumn(nullable=true)
      */
     private $utilisateur;

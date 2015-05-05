@@ -23,14 +23,14 @@ class Competence
     
     
     /**
-     * @ORM\ManyToOne(targetEntity="TypeCompetence", inversedBy="competences", cascade={"remove"})
+     * @ORM\ManyToOne(targetEntity="TypeCompetence", inversedBy="competences", cascade={"persist"})
      * @ORM\JoinColumn(nullable=true)
      */
     private $typeCompetence;
     
     
     /**
-     * @ORM\ManyToOne(targetEntity="Utilisateur", inversedBy="competences", cascade={"remove"})
+     * @ORM\ManyToOne(targetEntity="Utilisateur", inversedBy="competences", cascade={"persist"})
      * @ORM\JoinColumn(nullable=true)
      */
     private $utilisateur;

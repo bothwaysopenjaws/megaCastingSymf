@@ -31,7 +31,7 @@ class TypeMedia
     
     
     /**
-     * @ORM\OneToMany(targetEntity="Multimedia", mappedBy="typeMedia", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="Multimedia", mappedBy="typeMedia", cascade={"persist"}, orphanRemoval=false)
      * @ORM\JoinColumn(nullable=true)
      */
     private $multimedia;

@@ -53,7 +53,7 @@ class Offre
     
     
     /**
-     * @ORM\ManyToOne(targetEntity="Utilisateur", inversedBy="offres", cascade={"remove"})
+     * @ORM\ManyToOne(targetEntity="Utilisateur", inversedBy="offres", cascade={"persist"})
      * @ORM\JoinColumn(nullable=true)
      */
     private $utilisateur;

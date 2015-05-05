@@ -30,7 +30,7 @@ class TypeContrat
     
     
     /**
-     * @ORM\OneToMany(targetEntity="Offre", mappedBy="typeContrat", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="Offre", mappedBy="typeContrat", cascade={"persist"}, orphanRemoval=false)
      * @ORM\JoinColumn(nullable=true)
      */
     private $offres;

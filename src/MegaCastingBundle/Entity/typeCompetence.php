@@ -29,7 +29,7 @@ class TypeCompetence
     private $libelle;
     
     /**
-     * @ORM\OneToMany(targetEntity="Competence", mappedBy="typeCompetence", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="Competence", mappedBy="typeCompetence", cascade={"persist"}, orphanRemoval=false)
      * @ORM\JoinColumn(nullable=true)
      */
     private $competences;

@@ -70,6 +70,7 @@ class Domaine
     {
         return $this->libelle;
     }
+    
     /**
      * Constructor
      */
@@ -78,12 +79,7 @@ class Domaine
       
     }
 
-    /**
-     * Add utilisateurs
-     *
-     * @param \MegaCastingBundle\Entity\Utilisateur $utilisateurs
-     * @return Domaine
-     */
+    
     /**
      * Add metiers
      *

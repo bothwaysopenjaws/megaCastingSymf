@@ -36,11 +36,7 @@ class TypeUtilisateur
     private $utilisateurs;
     
    
-    /**
-     * @ORM\OneToMany(targetEntity="Historique", mappedBy="utilisateur", cascade={"persist"}, orphanRemoval=true)
-     * @ORM\JoinColumn(nullable=true)
-     */
-    private $historiques;
+
 
 
     /**

@@ -57,38 +57,39 @@ class Utilisateur
     private $dateNaissance;
     
     /**
-     * @ORM\OneToMany(targetEntity="Historique", mappedBy="utilisateur", cascade={"persist"}, orphanRemoval=false)
+     * @ORM\OneToMany(targetEntity="Historique", mappedBy="utilisateur", cascade={"remove"}, orphanRemoval=false)
      * @ORM\JoinColumn(nullable=true)
      */
     private $historiques;
     
+   
     /**
-     * @ORM\OneToOne(targetEntity="Adresse", mappedBy="utilisateur", cascade={"persist"}, orphanRemoval=false)
+     * @ORM\OneToOne(targetEntity="Adresse", mappedBy="utilisateur", cascade={"remove"}, orphanRemoval=false)
      * @ORM\JoinColumn(nullable=true)
      */
     private $adresse;
     
     /**
-     * @ORM\OneToMany(targetEntity="Competence", mappedBy="utilisateur", cascade={"persist"}, orphanRemoval=false)
+     * @ORM\OneToMany(targetEntity="Competence", mappedBy="utilisateur", cascade={"remove"}, orphanRemoval=false)
      * @ORM\JoinColumn(nullable=true)
      */
     private $competences;
     
     /**
-     * @ORM\OneToMany(targetEntity="Multimedia", mappedBy="utilisateur", cascade={"persist"}, orphanRemoval=false)
+     * @ORM\OneToMany(targetEntity="Multimedia", mappedBy="utilisateur", cascade={"remove"}, orphanRemoval=false)
      * @ORM\JoinColumn(nullable=true)
      */
     private $multimedias;
     
     
     /**
-     * @ORM\OneToMany(targetEntity="Abonnement", mappedBy="utilisateur", cascade={"persist"}, orphanRemoval=false)
+     * @ORM\OneToMany(targetEntity="Abonnement", mappedBy="utilisateur", cascade={"remove"}, orphanRemoval=false)
      * @ORM\JoinColumn(nullable=true)
      */
     private $abonnements;
     
     /**
-     * @ORM\OneToMany(targetEntity="Offre", mappedBy="utilisateur", cascade={"persist"}, orphanRemoval=false)
+     * @ORM\OneToMany(targetEntity="Offre", mappedBy="utilisateur", cascade={"remove"}, orphanRemoval=false)
      * @ORM\JoinColumn(nullable=true)
      */
     private $offres;
@@ -108,7 +109,7 @@ class Utilisateur
     private $telephone;
     
     /**
-     * @ORM\ManyToOne(targetEntity="TypeUtilisateur", inversedBy="utilisateurs", cascade={"remove"})
+     * @ORM\ManyToOne(targetEntity="TypeUtilisateur", inversedBy="utilisateurs", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $typeUtilisateur;

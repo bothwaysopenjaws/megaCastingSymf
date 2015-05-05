@@ -38,7 +38,7 @@ class Abonnement
     private $restant;
     
     /**
-     * @ORM\ManyToOne(targetEntity="TypeAbonnement", inversedBy="abonnements", cascade={"remove"})
+     * @ORM\ManyToOne(targetEntity="TypeAbonnement", inversedBy="abonnements", cascade={"persist"})
      * @ORM\JoinColumn(nullable=true)
      */
     private $typeAbonnement;
@@ -46,7 +46,7 @@ class Abonnement
     
     
     /**
-     * @ORM\ManyToOne(targetEntity="Utilisateur", inversedBy="abonnements", cascade={"remove"})
+     * @ORM\ManyToOne(targetEntity="Utilisateur", inversedBy="abonnements", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $utilisateur;

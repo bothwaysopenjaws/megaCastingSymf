@@ -38,13 +38,13 @@ class Multimedia
 
     /**
      * 
-     * @ORM\ManyToOne(targetEntity="TypeMedia", inversedBy="multimedias", cascade={"remove"})
+     * @ORM\ManyToOne(targetEntity="TypeMedia", inversedBy="multimedias", cascade={"persist"})
      * @ORM\JoinColumn(nullable=true)
      */
     private $typeMedia;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Utilisateur", inversedBy="multimedias", cascade={"remove"})
+     * @ORM\ManyToOne(targetEntity="Utilisateur", inversedBy="multimedias", cascade={"persist"})
      * @ORM\JoinColumn(nullable=true)
      */
     private $utilisateur;
