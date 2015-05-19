@@ -22,8 +22,11 @@ class __TwigTemplate_7b89a9d449cb9cc2026bf43b3ccbdcfe2b8b782c2d51d3d5f39dabe25bb
         echo "<!DOCTYPE html>
 <html lang=\"en\">
     <head>
-        <meta charset=\"UTF-8\">
-        <meta name=\"robots\" content=\"noindex,nofollow\">
+        <meta charset=\"";
+        // line 4
+        echo twig_escape_filter($this->env, $this->env->getCharset(), "html", null, true);
+        echo "\" />
+        <meta name=\"robots\" content=\"noindex,nofollow\" />
         <title>";
         // line 6
         $this->displayBlock('title', $context, $blocks);
@@ -32,7 +35,7 @@ class __TwigTemplate_7b89a9d449cb9cc2026bf43b3ccbdcfe2b8b782c2d51d3d5f39dabe25bb
         <style>
             ";
         // line 9
-        $this->env->loadTemplate("@WebProfiler/Profiler/body.css.twig")->display($context);
+        $this->loadTemplate("@WebProfiler/Profiler/body.css.twig", "@WebProfiler/Profiler/base.html.twig", 9)->display($context);
         // line 10
         echo "        </style>
         ";
@@ -42,7 +45,7 @@ class __TwigTemplate_7b89a9d449cb9cc2026bf43b3ccbdcfe2b8b782c2d51d3d5f39dabe25bb
         echo "        <style>
             ";
         // line 17
-        $this->env->loadTemplate("@WebProfiler/Profiler/toolbar.css.twig")->display(array_merge($context, array("position" => "top", "floatable" => false)));
+        $this->loadTemplate("@WebProfiler/Profiler/toolbar.css.twig", "@WebProfiler/Profiler/base.html.twig", 17)->display(array_merge($context, array("position" => "top", "floatable" => false)));
         // line 18
         echo "        </style>
     </head>
@@ -69,7 +72,7 @@ class __TwigTemplate_7b89a9d449cb9cc2026bf43b3ccbdcfe2b8b782c2d51d3d5f39dabe25bb
         echo "            <style>
                 ";
         // line 13
-        $this->env->loadTemplate("@WebProfiler/Profiler/profiler.css.twig")->display($context);
+        $this->loadTemplate("@WebProfiler/Profiler/profiler.css.twig", "@WebProfiler/Profiler/base.html.twig", 13)->display($context);
         // line 14
         echo "            </style>
         ";
@@ -93,6 +96,6 @@ class __TwigTemplate_7b89a9d449cb9cc2026bf43b3ccbdcfe2b8b782c2d51d3d5f39dabe25bb
 
     public function getDebugInfo()
     {
-        return array (  79 => 21,  74 => 14,  72 => 13,  69 => 12,  66 => 11,  60 => 6,  54 => 22,  52 => 21,  47 => 18,  45 => 17,  42 => 16,  40 => 11,  37 => 10,  35 => 9,  29 => 6,  22 => 1,);
+        return array (  82 => 21,  77 => 14,  75 => 13,  72 => 12,  69 => 11,  63 => 6,  57 => 22,  55 => 21,  50 => 18,  48 => 17,  45 => 16,  43 => 11,  40 => 10,  38 => 9,  32 => 6,  27 => 4,  22 => 1,);
     }
 }

@@ -89,7 +89,7 @@ class __TwigTemplate_db41fab0bd6b1b1eb7e1065beb0f1f8420573feafc736c2b0b9fddc4ecb
             echo "            <li>
                 ";
             // line 21
-            $this->env->loadTemplate("TwigBundle:Exception:trace.html.twig")->display(array("prefix" => (isset($context["position"]) ? $context["position"] : $this->getContext($context, "position")), "i" => $context["i"], "trace" => $context["trace"]));
+            $this->loadTemplate("TwigBundle:Exception:trace.html.twig", "TwigBundle:Exception:traces.html.twig", 21)->display(array("prefix" => (isset($context["position"]) ? $context["position"] : $this->getContext($context, "position")), "i" => $context["i"], "trace" => $context["trace"]));
             // line 22
             echo "            </li>
         ";

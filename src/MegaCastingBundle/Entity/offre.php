@@ -79,7 +79,7 @@ class Offre
     
 
     /**
-     * @ORM\ManyToOne(targetEntity="typeContrat", inversedBy="offres", cascade={"remove"})
+     * @ORM\ManyToOne(targetEntity="TypeContrat", inversedBy="offres", cascade={"remove"})
      * @ORM\JoinColumn(nullable=true)
      */
     private $typeContrat;

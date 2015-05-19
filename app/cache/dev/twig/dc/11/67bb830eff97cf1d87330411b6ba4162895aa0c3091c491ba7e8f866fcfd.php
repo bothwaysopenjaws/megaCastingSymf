@@ -103,7 +103,7 @@ class __TwigTemplate_dc1167bb830eff97cf1d87330411b6ba4162895aa0c3091c491ba7e8f86
         foreach ($context['_seq'] as $context["position"] => $context["e"]) {
             // line 40
             echo "    ";
-            $this->env->loadTemplate("TwigBundle:Exception:traces.html.twig")->display(array("exception" => $context["e"], "position" => $context["position"], "count" => (isset($context["previous_count"]) ? $context["previous_count"] : $this->getContext($context, "previous_count"))));
+            $this->loadTemplate("TwigBundle:Exception:traces.html.twig", "TwigBundle:Exception:exception.html.twig", 40)->display(array("exception" => $context["e"], "position" => $context["position"], "count" => (isset($context["previous_count"]) ? $context["previous_count"] : $this->getContext($context, "previous_count"))));
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['position'], $context['e'], $context['_parent'], $context['loop']);
@@ -153,7 +153,7 @@ class __TwigTemplate_dc1167bb830eff97cf1d87330411b6ba4162895aa0c3091c491ba7e8f86
         <div id=\"logs\">
             ";
             // line 66
-            $this->env->loadTemplate("TwigBundle:Exception:logs.html.twig")->display(array("logs" => $this->getAttribute((isset($context["logger"]) ? $context["logger"] : $this->getContext($context, "logger")), "logs", array())));
+            $this->loadTemplate("TwigBundle:Exception:logs.html.twig", "TwigBundle:Exception:exception.html.twig", 66)->display(array("logs" => $this->getAttribute((isset($context["logger"]) ? $context["logger"] : $this->getContext($context, "logger")), "logs", array())));
             // line 67
             echo "        </div>
     </div>
@@ -196,7 +196,7 @@ class __TwigTemplate_dc1167bb830eff97cf1d87330411b6ba4162895aa0c3091c491ba7e8f86
         echo "
 ";
         // line 91
-        $this->env->loadTemplate("TwigBundle:Exception:traces_text.html.twig")->display(array("exception" => (isset($context["exception"]) ? $context["exception"] : $this->getContext($context, "exception"))));
+        $this->loadTemplate("TwigBundle:Exception:traces_text.html.twig", "TwigBundle:Exception:exception.html.twig", 91)->display(array("exception" => (isset($context["exception"]) ? $context["exception"] : $this->getContext($context, "exception"))));
         // line 92
         echo "
 <script type=\"text/javascript\">//<![CDATA[

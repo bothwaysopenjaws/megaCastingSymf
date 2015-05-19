@@ -3,6 +3,8 @@
 namespace MegaCastingBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use FOS\UserBundle\Model\User as BaseUser;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Utilisateur
@@ -10,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table("utilisateur")
  * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\UtilisateurRepository")
  */
-class Utilisateur
+class Utilisateur extends BaseUser
 {
     /**
      * @var integer
@@ -19,12 +21,20 @@ class Utilisateur
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
     
     /**
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255)
+     * @Assert\NotBlank(message="Entrez votre nom.", groups={"Registration", "Profile"})
+     * @Assert\Length(
+     *     min=2,
+     *     max="20",
+     *     minMessage="Le nom est trop court.",
+     *     maxMessage="Le nom est trop long.",
+     *     groups={"Registration", "Profile"}
+     * ) 
      */
     private $nom;
 
@@ -32,27 +42,22 @@ class Utilisateur
      * @var string
      *
      * @ORM\Column(name="prenom", type="string", length=255)
+     * @Assert\NotBlank(message="Entrez votre prénom.", groups={"Registration", "Profile"})
+     * @Assert\Length(
+     *     min=2,
+     *     max="20",
+     *     minMessage="Le prenom est trop court.",
+     *     maxMessage="Le prenom est trop long.",
+     *     groups={"Registration", "Profile"}
+     * )
      */
     private $prenom;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="login", type="string", length=255)
-     */
-    private $login;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="password", type="string", length=255)
-     */
-    private $password;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="dateNaissance", type="date")
+     * @ORM\Column(name="dateNaissance", type="date", nullable=true)
      */
     private $dateNaissance;
     
@@ -94,23 +99,17 @@ class Utilisateur
      */
     private $offres;
     
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="email", type="string", length=255)
-     */
-    private $email;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="telephone", type="string", length=255)
+     * @ORM\Column(name="telephone", type="string", length=255, nullable=true)
      */
     private $telephone;
     
     /**
      * @ORM\ManyToOne(targetEntity="TypeUtilisateur", inversedBy="utilisateurs", cascade={"persist"})
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $typeUtilisateur;
     
@@ -174,51 +173,6 @@ class Utilisateur
         return $this->prenom;
     }
 
-    /**
-     * Set login
-     *
-     * @param string $login
-     * @return Utilisateur
-     */
-    public function setLogin($login)
-    {
-        $this->login = $login;
-
-        return $this;
-    }
-
-    /**
-     * Get login
-     *
-     * @return string 
-     */
-    public function getLogin()
-    {
-        return $this->login;
-    }
-
-    /**
-     * Set password
-     *
-     * @param string $password
-     * @return Utilisateur
-     */
-    public function setPassword($password)
-    {
-        $this->password = $password;
-
-        return $this;
-    }
-
-    /**
-     * Get password
-     *
-     * @return string 
-     */
-    public function getPassword()
-    {
-        return $this->password;
-    }
 
     /**
      * Set dateNaissance
@@ -371,6 +325,7 @@ class Utilisateur
      */
     public function __construct()
     {
+        parent::__construct();
         $this->historiques = new \Doctrine\Common\Collections\ArrayCollection();
         $this->competences = new \Doctrine\Common\Collections\ArrayCollection();
         $this->medias = new \Doctrine\Common\Collections\ArrayCollection();
