@@ -127,17 +127,68 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        if (0 === strpos($pathinfo, '/hello')) {
-            // utilisateur_homepage
-            if (preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'utilisateur_homepage')), array (  '_controller' => 'UtilisateurBundle\\Controller\\DefaultController::indexAction',));
+        // utilisateur_homepage
+        if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'utilisateur_homepage')), array (  '_controller' => 'UtilisateurBundle\\Controller\\DefaultController::indexAction',));
+        }
+
+        // mega_casting_homepage
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'mega_casting_homepage');
             }
 
-            // mega_casting_homepage
-            if (preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'mega_casting_homepage')), array (  '_controller' => 'MegaCastingBundle:Default:index',));
+            return array (  '_controller' => 'MegaCastingBundle\\Controller\\MainController::indexAction',  '_route' => 'mega_casting_homepage',);
+        }
+
+        // mega_casting_historique
+        if (preg_match('#^/(?P<artiste>[^/]++)/historique/?$#s', $pathinfo, $matches)) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'mega_casting_historique');
             }
 
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'mega_casting_historique')), array (  '_controller' => 'MegaCastingBundle\\Controller\\ArtisteController::historiqueAction',));
+        }
+
+        // mega_casting_media
+        if (preg_match('#^/(?P<artiste>[^/]++)/media/?$#s', $pathinfo, $matches)) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'mega_casting_media');
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'mega_casting_media')), array (  '_controller' => 'MegaCastingBundle\\Controller\\ArtisteController::mediaAction',));
+        }
+
+        // mega_casting_experience
+        if (preg_match('#^/(?P<artiste>[^/]++)/experience/?$#s', $pathinfo, $matches)) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'mega_casting_experience');
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'mega_casting_experience')), array (  '_controller' => 'MegaCastingBundle\\Controller\\ArtisteController::experienceAction',));
+        }
+
+        // mega_casting_listeoffres
+        if (rtrim($pathinfo, '/') === '/listeOffres') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'mega_casting_listeoffres');
+            }
+
+            return array (  '_controller' => 'MegaCastingBundle\\Controller\\MainController::indexAction',  '_route' => 'mega_casting_listeoffres',);
+        }
+
+        // mega_casting_quisommesnous
+        if (rtrim($pathinfo, '/') === '/quiSommesNous') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'mega_casting_quisommesnous');
+            }
+
+            return array (  '_controller' => 'MegaCastingBundle\\Controller\\MainController::quiSommesNousAction',  '_route' => 'mega_casting_quisommesnous',);
+        }
+
+        // mega_casting_listeoffres_offre
+        if (0 === strpos($pathinfo, '/listeOffres') && preg_match('#^/listeOffres/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'mega_casting_listeoffres_offre')), array (  '_controller' => 'MegaCastingBundle\\Controller\\MainController::detailOffreAction',));
         }
 
         // homepage

@@ -1,0 +1,4 @@
+[2015-06-01 14:04:13] request.INFO: Matched route "mega_casting_homepage" (parameters: "_controller": "MegaCastingBundle\Controller\MainController::indexAction", "_route": "mega_casting_homepage") [] []
+[2015-06-01 14:04:14] security.INFO: Populated SecurityContext with an anonymous Token [] []
+[2015-06-01 14:04:14] request.CRITICAL: Uncaught PHP Exception Twig_Error_Syntax: "The function "knp_pagination_render" does not exist in "MegaCastingBundle:Default:listeOffres.html.twig" at line 23" at C:\wamp\www\megaCasting\vendor\twig\twig\lib\Twig\ExpressionParser.php line 568 {"exception":"[object] (Twig_Error_Syntax(code: 0): The function \"knp_pagination_render\" does not exist in \"MegaCastingBundle:Default:listeOffres.html.twig\" at line 23 at C:\\wamp\\www\\megaCasting\\vendor\\twig\\twig\\lib\\Twig\\ExpressionParser.php:568)"} []
+[2015-06-01 14:04:14] security.DEBUG: Write SecurityContext in the session [] []

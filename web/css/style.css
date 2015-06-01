@@ -11,3 +11,8 @@ body {
     display:block;
     background:url('../img/loading.gif');
 }
+
+.navbar-inverse .navbar-inner {     
+    background-image: linear-gradient(to bottom, red, red);
+
+}
