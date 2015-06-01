@@ -31,14 +31,14 @@ class Historique
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="dateDebut", type="date")
+     * @ORM\Column(name="dateDebut", type="datetime")
      */
     private $dateDebut;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="dateFin", type="date")
+     * @ORM\Column(name="dateFin", type="datetime")
      */
     private $dateFin;
 

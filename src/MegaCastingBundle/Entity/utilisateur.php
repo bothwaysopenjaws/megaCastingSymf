@@ -57,7 +57,7 @@ class Utilisateur extends BaseUser
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="dateNaissance", type="date", nullable=true)
+     * @ORM\Column(name="dateNaissance", type="datetime", nullable=true)
      */
     private $dateNaissance;
     

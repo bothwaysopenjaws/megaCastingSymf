@@ -1,3 +1,30 @@
 mega_casting_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: MegaCastingBundle:Default:index }
+    path:     /
+    defaults: { _controller: MegaCastingBundle:Main:index }
+ 
+mega_casting_historique:
+    path:     /{artiste}/historique/
+    defaults: { _controller: MegaCastingBundle:Artiste:historique } 
+ 
+mega_casting_media:
+    path:     /{artiste}/media/
+    defaults: { _controller: MegaCastingBundle:Artiste:media } 
+  
+mega_casting_experience:
+    path:     /{artiste}/experience/
+    defaults: { _controller: MegaCastingBundle:Artiste:experience }     
+    
+mega_casting_listeoffres:
+    path:     /listeOffres/
+    defaults: { _controller: MegaCastingBundle:Main:index } 
+    
+    
+mega_casting_quisommesnous:
+    path:     /quiSommesNous/
+    defaults: { _controller: MegaCastingBundle:Main:quiSommesNous }     
+    
+    
+mega_casting_listeoffres_offre:
+    path:     /listeOffres/{id}
+    defaults: { _controller: MegaCastingBundle:Main:detailOffre } 
+    

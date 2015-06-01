@@ -26,7 +26,7 @@ class Abonnement
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="dateSouscription", type="date")
+     * @ORM\Column(name="dateSouscription", type="datetime")
      */
     private $dateSouscription;
 
