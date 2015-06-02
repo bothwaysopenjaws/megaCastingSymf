@@ -168,13 +168,13 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'mega_casting_experience')), array (  '_controller' => 'MegaCastingBundle\\Controller\\ArtisteController::experienceAction',));
         }
 
-        // mega_casting_listeoffres
+        // mega_casting_listeOffres
         if (rtrim($pathinfo, '/') === '/listeOffres') {
             if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'mega_casting_listeoffres');
+                return $this->redirect($pathinfo.'/', 'mega_casting_listeOffres');
             }
 
-            return array (  '_controller' => 'MegaCastingBundle\\Controller\\MainController::listeOffresAction',  '_route' => 'mega_casting_listeoffres',);
+            return array (  '_controller' => 'MegaCastingBundle\\Controller\\MainController::listeOffresAction',  '_route' => 'mega_casting_listeOffres',);
         }
 
         // mega_casting_quisommesnous

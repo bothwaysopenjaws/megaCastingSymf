@@ -61,10 +61,22 @@ class __TwigTemplate_a1ae0ef742cbded0c0b785fef8b89d15318d25495792152610fc1480ab0
                         <span class=\"icon-bar\"></span>
                         <span class=\"icon-bar\"></span>
                     </button>
-                    <a class=\"brand\" href=\"megaCasting/../../../../src/MegaCastingBundle/Resources/views/Default/index.html.twig\" ><img src=\"megaCasting/../../../../web/images/unnamed.png\"></a>
-                    <a class=\"brand\" href=\"megaCasting/../../../../src/MegaCastingBundle/Resources/views/Default/listeOffres.html.twig\">Nos offres</a>
-                    <a class=\"brand\" href=\"megaCasting/../../../../src/MegaCastingBundle/Resources/views/Default/nousContacter.html.twig\">Nous contacter</a>
-                    <a class=\"brand\" href=\"megaCasting/../../../../src/MegaCastingBundle/Resources/views/Default/quiSommesNous.html.twig\">Qui sommes nous</a>
+                    <a class=\"brand\" href=\"";
+        // line 22
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("index.html.twig"), "html", null, true);
+        echo "\"><img src=\"megaCasting/../../../../web/images/unnamed.png\"></a>
+                    <a class=\"brand\" href=\"";
+        // line 23
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("listeOffres.html.twig"), "html", null, true);
+        echo "\">Nos offres</a>
+                    <a class=\"brand\" href=\"";
+        // line 24
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("nousContacter.html.twig"), "html", null, true);
+        echo "\">Nous contacter</a>
+                    <a class=\"brand\" href=\"";
+        // line 25
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("quiSommesnous.html.twig"), "html", null, true);
+        echo "\">Qui sommes nous</a>
                     <div class=\"nav-collapse collapse\">
                         <form class=\"navbar-form form-search pull-right\">
                     <input id=\"Search\" name=\"Search\" type=\"text\" class=\"input-medium search-query\">
@@ -78,26 +90,36 @@ class __TwigTemplate_a1ae0ef742cbded0c0b785fef8b89d15318d25495792152610fc1480ab0
         // line 35
         $this->displayBlock('body', $context, $blocks);
         // line 36
-        echo "        <hr />
-
-        <script src=\"";
-        // line 38
+        echo "        <hr noshade size=\"3\" width=\"100%\" align=\"center\">
+\t<footer id=\"footer\" class=\"vspace20\">
+\t\t<div class=\"container\">
+\t\t\t<div class=\"row\">
+\t\t\t\t<div class=\"span4\">
+\t\t\t\t\t<p>&copy;Copyright 2015 - CoderLand  </p>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+\t</footer>\t
+\t <script src=\"";
+        // line 46
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/jquery-1.10.0.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 39
+        // line 47
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/bootstrap.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 40
+        // line 48
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/main.js"), "html", null, true);
         echo "\"></script>
         ";
-        // line 41
+        // line 49
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 42
-        echo "    </body>
-</html>";
+        // line 50
+        echo "</body>
+</html>
+
+";
     }
 
     // line 5
@@ -116,7 +138,7 @@ class __TwigTemplate_a1ae0ef742cbded0c0b785fef8b89d15318d25495792152610fc1480ab0
     {
     }
 
-    // line 41
+    // line 49
     public function block_javascripts($context, array $blocks = array())
     {
     }
@@ -133,6 +155,6 @@ class __TwigTemplate_a1ae0ef742cbded0c0b785fef8b89d15318d25495792152610fc1480ab0
 
     public function getDebugInfo()
     {
-        return array (  120 => 41,  115 => 35,  110 => 10,  104 => 5,  99 => 42,  97 => 41,  93 => 40,  89 => 39,  85 => 38,  81 => 36,  79 => 35,  51 => 11,  49 => 10,  45 => 9,  41 => 8,  37 => 7,  33 => 6,  29 => 5,  23 => 1,);
+        return array (  142 => 49,  137 => 35,  132 => 10,  126 => 5,  119 => 50,  117 => 49,  113 => 48,  109 => 47,  105 => 46,  93 => 36,  91 => 35,  78 => 25,  74 => 24,  70 => 23,  66 => 22,  51 => 11,  49 => 10,  45 => 9,  41 => 8,  37 => 7,  33 => 6,  29 => 5,  23 => 1,);
     }
 }

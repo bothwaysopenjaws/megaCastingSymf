@@ -15,7 +15,7 @@ class MainController extends Controller
     
     public function listeOffresAction() 
     {
-        return $this->render('MegaCastingBundle:Default:listeOffres.hmtl.twig');
+        return $this->render('MegaCastingBundle:Default:listeOffres.html.twig');
     }
 
 

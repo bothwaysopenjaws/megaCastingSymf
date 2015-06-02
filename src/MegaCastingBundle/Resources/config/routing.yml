@@ -14,7 +14,7 @@ mega_casting_experience:
     path:     /{artiste}/experience/
     defaults: { _controller: MegaCastingBundle:Artiste:experience }     
     
-mega_casting_listeoffres:
+mega_casting_listeOffres:
     path:     /listeOffres/
     defaults: { _controller: MegaCastingBundle:Main:listeOffres } 
     

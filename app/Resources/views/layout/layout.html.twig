@@ -19,10 +19,10 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="brand" href="megaCasting/../../../../src/MegaCastingBundle/Resources/views/Default/index.html.twig" ><img src="megaCasting/../../../../web/images/unnamed.png"></a>
-                    <a class="brand" href="megaCasting/../../../../src/MegaCastingBundle/Resources/views/Default/listeOffres.html.twig">Nos offres</a>
-                    <a class="brand" href="megaCasting/../../../../src/MegaCastingBundle/Resources/views/Default/nousContacter.html.twig">Nous contacter</a>
-                    <a class="brand" href="megaCasting/../../../../src/MegaCastingBundle/Resources/views/Default/quiSommesNous.html.twig">Qui sommes nous</a>
+                    <a class="brand" href="{{ asset('index.html.twig') }}"><img src="megaCasting/../../../../web/images/unnamed.png"></a>
+                    <a class="brand" href="{{ asset('listeOffres.html.twig')}}">Nos offres</a>
+                    <a class="brand" href="{{ asset('nousContacter.html.twig')}}">Nous contacter</a>
+                    <a class="brand" href="{{ asset('quiSommesnous.html.twig')}}">Qui sommes nous</a>
                     <div class="nav-collapse collapse">
                         <form class="navbar-form form-search pull-right">
                     <input id="Search" name="Search" type="text" class="input-medium search-query">
@@ -33,11 +33,20 @@
             </div>
         </div>
         {% block body %}{% endblock %}
-        <hr />
-
-        <script src="{{ asset('js/jquery-1.10.0.min.js') }}"></script>
+        <hr noshade size="3" width="100%" align="center">
+	<footer id="footer" class="vspace20">
+		<div class="container">
+			<div class="row">
+				<div class="span4">
+					<p>&copy;Copyright 2015 - CoderLand  </p>
+				</div>
+			</div>
+		</div>
+	</footer>	
+	 <script src="{{ asset('js/jquery-1.10.0.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap.js') }}"></script>
         <script src="{{ asset('js/main.js') }}"></script>
         {% block javascripts %}{% endblock %}
-    </body>
+</body>
 </html>
+
