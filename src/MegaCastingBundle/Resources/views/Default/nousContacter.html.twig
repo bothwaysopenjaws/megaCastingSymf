@@ -3,28 +3,45 @@
 
 
 {% block body %}
-    
-  <form action="/ma-page-php" method="post">
-    <div>
-        <label for="nom">Nom :</label>
-        <input type="text" id="nom" />
-    </div>
-      <div>
-        <label for="nom">Prénom :</label>
-        <input type="text" id="nom" />
-    </div>
-    <div>
-        <label for="courriel">Email :</label>
-        <input type="email" id="courriel" />
-    </div>
-    <div>
-        <label for="message">Message :</label>
-        <textarea id="message"></textarea>
-    </div>
-    
-    <div class="button">
-        <button type="submit">Envoyer</button>
-    </div>
-</form>  
-    
+
+    <h2>Nous contacter :</h2>
+    <p>Une question, des précisions sur nos offres ou toute autre information ?</p>
+    <p> MegaProduction s'engage à vous répondre dans les plus brefs délais ! 
+        N'attendez plus pour contacter le Service Clients par email en remplissant le formulaire ci-dessous :</p>
+    <form action="/ma-page-php" method="post">
+        <div>
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" />
+        </div>
+        <div>
+            <label for="nom">Prénom :</label>
+            <input type="text" id="nom" />
+        </div>
+        <div>
+            <label for="courriel">Email :</label>
+            <input type="email" id="courriel" />
+        </div>
+        <div>
+            <label for="message">Message :</label>
+            <textarea id="message"></textarea>
+        </div>
+
+        <div class="button">
+            <button type="submit">Envoyer</button>
+        </div>
+    </form>  
+    <hr noshade size="5" width="75%" align="center">
+    <h3>Nous appeler</h3>
+    <p>Le Service Clients est accessible, de 9h à 20h du lundi au samedi, au
+        Les appels reçus et émis par le Service Clients sont susceptibles d'être enregistrés
+        à des fins de formation et dans le but d'améliorer constamment la qualité du service 
+        mis à disposition du client. </p>
+    <p><img src="megaCasting/../../../../web/images/num-vert.gif"></p>
+    <hr noshade size="5" width="75%" align="center">
+    <h3>Nous écrire</h3>
+    <p>Si vous désirez écrire au siège de l'entreprise MegaProduction :<p>
+    <p>Service Clients MegaProduction</p>
+    <p> 65 avenue Edouard Vaillant</p>
+    <p>92100 Boulogne Billancourt</p>
+
 {% endblock %}

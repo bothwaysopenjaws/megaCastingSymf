@@ -28,23 +28,84 @@ class __TwigTemplate_a64075131edb239abecd36981bd735479c27d7cc6adb19865520a23bb12
     public function block_body($context, array $blocks = array())
     {
         // line 6
-        echo "    
-    <h2> Secteur d’activité </h2>
+        echo "
+    <article>
+        <h2>MegaGestion</h2>
+        
+        <h3>Historique</h3>
 
-<p>Médias, cinéma, musique, théâtre, danse... Les métiers de l'audiovisuel et du spectacle 
-   attirent de plus en plus de jeunes. Ils deviennent aussi de plus en plus précaires... 
-   Un talent certain, une formation de qualité, mais aussi de la ténacité et de la volonté 
-   sont indispensables.<p>
+        <p>MegaProduction est une société de production créée en janvier 2003.</p>
+        <p>Depuis un peu plus de 10 ans, MegaProduction accompagne les artistes, qu’ils soient danseurs, musiciens, 
+            chorégraphes, compositeurs, réalisateurs ou photographes.
+            Le bureau leur apporte un soutien en administration, en diffusion, met à leur disposition du 
+            matériel et des outils de travail, les accompagne sur les dates de tournées, gère leurs diffusions 
+            et leurs communications.</p>
+    </article>
 
-    <h2>Historique</h2>
+    <article>
 
-    <p>MegaProduction est une société de production créée en janvier 2003.</p>
-    <p>Depuis un peu plus de 10 ans, MegaProduction accompagne les artistes, qu’ils soient danseurs, musiciens, 
-    chorégraphes, compositeurs, réalisateurs ou photographes.
-Le bureau leur apporte un soutien en administration, en diffusion, met à leur disposition du 
-    matériel et des outils de travail, les accompagne sur les dates de tournées, gère leurs diffusions 
-    et leurs communications.</p>
 
+        <h3> Secteur d’activité </h3>
+
+        <p>Médias, cinéma, musique, théâtre, danse... Les métiers de l'audiovisuel et du spectacle 
+            attirent de plus en plus de jeunes. Ils deviennent aussi de plus en plus précaires... 
+            Un talent certain, une formation de qualité, mais aussi de la ténacité et de la volonté 
+            sont indispensables.<p>
+    </article>
+
+    <hr noshade size=\"5\" width=\"100%\" align=\"center\">
+    
+    <article>
+        <h2>Nos activités</h2>
+        <p>
+        
+        <p class=\"imageAGauche\">
+            <img src=\"megaCasting/../../../../web/images/trnabonoscope_Femme.png\" alt=\"Nouveau !\" />
+</p>
+        <h3> Pôle Casting</h3>
+        <p>Sous la responsabilité de Madame Sylvie Plard,  le pôle compte 15 employés à temps pleins.<p>
+        <p> Son activité consiste à mettre en relation les professionnels et les artistes.</p>
+        <p class=\"dessous\"></p>
+        <p class=\"imageAGauche\">
+            <img src=\"megaCasting/../../../../web/images/Avatar_Hommz.png\" alt=\"Nouveau !\" />
+</p>
+        <h3>Pôle Spectacle</h3>
+
+        <p>Le pôle spectacle est l’activité majeure de MegaProduction. 
+            Ce pôle propose différentes prestations événementielles telles que :</p>
+
+        <ul>
+            <li>L’organisation de spectacles, musiques, théâtre</li>
+            <li>Participer à l’organisation de show télévisuel.</li>
+            <li>Spectacle éducatif, spectacle pédagogique, spectacle de sensibilisation</li>
+            <li>Proposer des comédiens capables de jouer le maître de cérémonie, aboyeur ou présentateur.</li>
+        </ul>
+        <p>Ce pôle compte 45 employés à temps pleins et  une vingtaine d’intermittents du spectacle, 
+            cette activité est sous la responsabilité de Jean Marc Poulain.</p>
+ <p class=\"dessous\"></p>
+  <p class=\"imageAGauche\">
+            <img src=\"megaCasting/../../../../web/images/trnabonoscope_Femme.png\" alt=\"Nouveau !\" />
+</p>
+        <h3>Pôle boutique</h3>
+
+        <p>Le Pôle boutique regroupe plusieurs points de ventes des produits diffusés par MegaProduction : 
+            Film, vidéo, T-shirts, ventes de musiques en ligne etc…
+            A ce jour MegaProduction Compte 4 points de ventes dont 2 en région parisienne, St Denis et 
+            le 19ieme arrondissement de Paris, 1 boutique à Toulouse et une boutique dans une zone franche 
+            de Marseille.</p>
+        <p>Cette activité est sous la responsabilité de Mlle Sophie Pineau, son équipe compte 5 employés à temps pleins 
+            (ne sont pas pris en compte le personnel des points de ventes qui sont des franchisés).</p>
+ <p class=\"dessous\"></p>
+ <p class=\"imageAGauche\">
+            <img src=\"megaCasting/../../../../web/images/trnabonoscope_Femme.png\" alt=\"Nouveau !\" />
+</p>
+        <h3>Pôle musique</h3>
+
+        <p>Son activité principale consiste à valoriser, promouvoir et accompagner des groupes.</p>
+        <p>Dont la responsable est Mlle Lynda Mea, elle dirige une équipe de employés à temps pleins et fait très souvent 
+            appel à des intermittents du spectacle en général une moyenne de employés à temps pleins par mois.</p>
+    </p>
+</article>
 ";
     }
 

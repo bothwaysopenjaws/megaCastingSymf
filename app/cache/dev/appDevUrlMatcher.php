@@ -174,7 +174,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->redirect($pathinfo.'/', 'mega_casting_listeoffres');
             }
 
-            return array (  '_controller' => 'MegaCastingBundle\\Controller\\MainController::indexAction',  '_route' => 'mega_casting_listeoffres',);
+            return array (  '_controller' => 'MegaCastingBundle\\Controller\\MainController::listeOffresAction',  '_route' => 'mega_casting_listeoffres',);
         }
 
         // mega_casting_quisommesnous
@@ -189,6 +189,15 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         // mega_casting_listeoffres_offre
         if (0 === strpos($pathinfo, '/listeOffres') && preg_match('#^/listeOffres/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'mega_casting_listeoffres_offre')), array (  '_controller' => 'MegaCastingBundle\\Controller\\MainController::detailOffreAction',));
+        }
+
+        // mega_casting_nousContacter
+        if (rtrim($pathinfo, '/') === '/nousContacter') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'mega_casting_nousContacter');
+            }
+
+            return array (  '_controller' => 'MegaCastingBundle\\Controller\\MainController::nousContacterAction',  '_route' => 'mega_casting_nousContacter',);
         }
 
         // homepage

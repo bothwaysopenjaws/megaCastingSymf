@@ -16,7 +16,7 @@ mega_casting_experience:
     
 mega_casting_listeoffres:
     path:     /listeOffres/
-    defaults: { _controller: MegaCastingBundle:Main:index } 
+    defaults: { _controller: MegaCastingBundle:Main:listeOffres } 
     
     
 mega_casting_quisommesnous:
@@ -28,3 +28,6 @@ mega_casting_listeoffres_offre:
     path:     /listeOffres/{id}
     defaults: { _controller: MegaCastingBundle:Main:detailOffre } 
     
+mega_casting_nousContacter:
+    path:   /nousContacter/
+    defaults: { _controller: MegaCastingBundle:Main:nousContacter }

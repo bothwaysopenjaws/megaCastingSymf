@@ -10,13 +10,23 @@ class MainController extends Controller
     
     public function indexAction()
     {
-        return $this->render('MegaCastingBundle:Default:listeOffres.html.twig');
+        return $this->render('MegaCastingBundle:Default:index.html.twig');
     }
     
-    
+    public function listeOffresAction() 
+    {
+        return $this->render('MegaCastingBundle:Default:listeOffres.hmtl.twig');
+    }
+
+
     public function quiSommesNousAction()
     {
         return $this->render('MegaCastingBundle:Default:quiSommesNous.html.twig');
+    }
+    
+    public function nousContacterAction() 
+    {
+        return $this->render('MegaCastingBundle:Default:nousContacter.html.twig');
     }
     
     public function rechercheAction()

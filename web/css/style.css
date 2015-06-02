@@ -2,7 +2,7 @@ body {
     padding-bottom: 40px;
     padding-top: 60px;
     max-height: 50px;
-    max-width: 70%;/* inqique que le body ne prendra que * % de la fenêtre*/
+    max-width: 65%;/* inqique que le body ne prendra que * % de la fenêtre*/
     margin: auto;
    background-color: whitesmoke;
 
@@ -39,12 +39,14 @@ p
     width: auto; /* On a indiqué une largeur (obligatoire) */
     margin: auto; /* On peut donc demander à ce que le bloc soit centré avec auto */
     text-align: justify;
-    padding: 12px;
+    padding: 5px;
 }
 /* Aligne l'image a gauche du texte'*/
 .imageAGauche {
     float:left;
 }
+
+
 /* Aligne l'image a droite du texte'*/
 .imageAdroite {
     float:right;
@@ -55,11 +57,10 @@ p
     clear: both;
 }
 
+
 .btn {
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
   border-radius: 28px;
-  font-family: Georgia;
+  font-family: fantasy;
   color: #8B0000;
   background: whitesmoke;
   padding: 5px 13px 5px 13px;
@@ -70,3 +71,4 @@ p
   background: white;
   text-decoration: none;
 }
+
