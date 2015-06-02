@@ -6,10 +6,31 @@ if (!isset($_SERVER['HTTP_HOST'])) {
 
 if (!in_array(@$_SERVER['REMOTE_ADDR'], array(
     '127.0.0.1',
+    '172.16.2.114',
+    '172.16.2.115',
+    '172.16.2.116',
+    '172.16.2.117',
+    '172.16.2.118',
+    '172.16.2.119',
+    '172.16.2.120',
+    '172.16.2.121',
+    '172.16.2.122',
+    '172.16.2.123',
+    '172.16.2.124',
+    '172.16.2.125',
+    '172.16.2.178',
+    '172.16.2.179',
+    '172.16.2.180',
+    '172.16.2.181',
+    '172.16.2.182',
+    '172.16.2.183',
+    '172.16.2.184',
+    '172.16.2.185',
+    '172.16.2.186',
     '::1',
 ))) {
     header('HTTP/1.0 403 Forbidden');
-    exit('This script is only accessible from localhost.');
+    exit('This script is only accessible from localhost. X');
 }
 
 require_once dirname(__FILE__).'/../app/SymfonyRequirements.php';
