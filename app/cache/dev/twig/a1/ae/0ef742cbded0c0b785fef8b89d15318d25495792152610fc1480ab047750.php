@@ -95,7 +95,7 @@ class __TwigTemplate_a1ae0ef742cbded0c0b785fef8b89d15318d25495792152610fc1480ab0
 \t\t<div class=\"container\">
 \t\t\t<div class=\"row\">
 \t\t\t\t<div class=\"span4\">
-\t\t\t\t\t<p>&copy;Copyright 2015 - CoderLand  </p>
+\t\t\t\t\t<p>&copy;Copyright 2015 - CoderLand </p>
 \t\t\t\t</div>
 \t\t\t</div>
 \t\t</div>
