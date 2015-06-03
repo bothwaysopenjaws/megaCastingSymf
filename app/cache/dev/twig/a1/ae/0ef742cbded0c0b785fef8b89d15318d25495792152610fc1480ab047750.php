@@ -20,125 +20,131 @@ class __TwigTemplate_a1ae0ef742cbded0c0b785fef8b89d15318d25495792152610fc1480ab0
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "<!DOCTYPE html>
+        echo "
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset=\"UTF-8\" />
         <title>";
-        // line 5
+        // line 6
         $this->displayBlock('titre', $context, $blocks);
         echo "</title>
         <link rel=\"stylesheet\" href=\"";
-        // line 6
+        // line 7
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/bootstrap.css"), "html", null, true);
         echo "\" />
         <link rel=\"stylesheet\" href=\"";
-        // line 7
+        // line 8
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/bootstrap-responsive.css"), "html", null, true);
         echo "\" />
         <link rel=\"stylesheet\" href=\"";
-        // line 8
+        // line 9
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/style.css"), "html", null, true);
         echo "\" />
         <link rel=\"stylesheet\" href=\"";
-        // line 9
+        // line 10
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/font-awesome.css"), "html", null, true);
         echo "\" />
-        ";
-        // line 10
+
+    ";
+        // line 12
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 11
-        echo "        <link rel=\"icon\" type=\"image/x-icon\" href=\"";
+        // line 13
+        echo "    <link rel=\"icon\" type=\"image/x-icon\" href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("favicon.ico"), "html", null, true);
         echo "\" />
-    </head>
-    <body>
-        <div class=\"navbar navbar-inverse navbar-fixed-top\">
-            <div class=\"navbar-inner\">
-                <div class=\"container\">
-                    <button class=\"btn btn-navbar\" data-target=\".nav-collapse\" data-toggle=\"collapse\" type=\"button\">
-                        <span class=\"icon-bar\"></span>
-                        <span class=\"icon-bar\"></span>
-                        <span class=\"icon-bar\"></span>
-                    </button>
-                    <a class=\"brand\" href=\"";
-        // line 22
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("index.html.twig"), "html", null, true);
-        echo "\"><img src=\"megaCasting/../../../../web/images/unnamed.png\"></a>
-                    <a class=\"brand\" href=\"";
-        // line 23
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("listeOffres.html.twig"), "html", null, true);
-        echo "\">Nos offres</a>
-                    <a class=\"brand\" href=\"";
+</head>
+<body>
+    <div class=\"navbar navbar-inverse navbar-fixed-top\">
+        <div class=\"navbar-inner\">
+            <div class=\"container\">
+                <button class=\"btn btn-navbar\" data-target=\".nav-collapse\" data-toggle=\"collapse\" type=\"button\">
+                    <span class=\"icon-bar\"></span>
+                    <span class=\"icon-bar\"></span>
+                    <span class=\"icon-bar\"></span>
+                </button>
+                <a class=\"brand\" href=\"";
         // line 24
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("nousContacter.html.twig"), "html", null, true);
-        echo "\">Nous contacter</a>
-                    <a class=\"brand\" href=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("app_dev.php/"), "html", null, true);
+        echo "\">MegaCastings<img src=\"megaCasting/../../../../web/images/unnamed.png\"></a>
+                <a class=\"brand\" href=\"";
         // line 25
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("quiSommesnous.html.twig"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("app_dev.php/listeOffres"), "html", null, true);
+        echo "\">Nos offres</a>
+                <a class=\"brand\" href=\"";
+        // line 26
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("app_dev.php/nousContacter"), "html", null, true);
+        echo "\">Nous contacter</a>
+                <a class=\"brand\" href=\"";
+        // line 27
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("app_dev.php/quiSommesNous"), "html", null, true);
         echo "\">Qui sommes nous</a>
-                    <div class=\"nav-collapse collapse\">
-                        <form class=\"navbar-form form-search pull-right\">
-                    <input id=\"Search\" name=\"Search\" type=\"text\" class=\"input-medium search-query\">
-                    <button type=\"submit\" class=\"btn\">Rechercher</button>
+                <a class=\"brand\" href=\"";
+        // line 28
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("app_dev.php/profile"), "html", null, true);
+        echo "\">Votre Profil</a>
+                <div class=\"nav-collapse collapse\">
+                    <form class=\"navbar-form form-search pull-right\">
+                        <input id=\"Search\" name=\"Search\" type=\"text\" class=\"input-medium search-query\">
+                        <button type=\"submit\" class=\"btn\">Rechercher</button>
                     </form>
-                    </div>
                 </div>
             </div>
         </div>
-        ";
-        // line 35
+    </div>
+";
+        // line 38
         $this->displayBlock('body', $context, $blocks);
-        // line 36
-        echo "        <hr noshade size=\"3\" width=\"100%\" align=\"center\">
-\t<footer id=\"footer\" class=\"vspace20\">
-\t\t<div class=\"container\">
-\t\t\t<div class=\"row\">
-\t\t\t\t<div class=\"span4\">
-\t\t\t\t\t<p>&copy;Copyright 2015 - CoderLand </p>
-\t\t\t\t</div>
-\t\t\t</div>
-\t\t</div>
-\t</footer>\t
-\t <script src=\"";
-        // line 46
+        // line 39
+        echo "<hr noshade size=\"3\" width=\"100%\" align=\"center\">
+<footer id=\"footer\" class=\"vspace20\">
+    <div class=\"container\">
+        <div class=\"row\">
+            <div class=\"span4\">
+                <p>&copy;Copyright 2015 - CoderLand </p>
+            </div>
+        </div>
+    </div>
+</footer>\t
+<script src=\"";
+        // line 49
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/jquery-1.10.0.min.js"), "html", null, true);
         echo "\"></script>
-        <script src=\"";
-        // line 47
+<script src=\"";
+        // line 50
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/bootstrap.js"), "html", null, true);
         echo "\"></script>
-        <script src=\"";
-        // line 48
+<script src=\"";
+        // line 51
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/main.js"), "html", null, true);
         echo "\"></script>
-        ";
-        // line 49
+";
+        // line 52
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 50
+        // line 53
         echo "</body>
 </html>
 
 ";
     }
 
-    // line 5
+    // line 6
     public function block_titre($context, array $blocks = array())
     {
         echo "MegaCastings";
     }
 
-    // line 10
+    // line 12
     public function block_stylesheets($context, array $blocks = array())
     {
     }
 
-    // line 35
+    // line 38
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 49
+    // line 52
     public function block_javascripts($context, array $blocks = array())
     {
     }
@@ -155,6 +161,6 @@ class __TwigTemplate_a1ae0ef742cbded0c0b785fef8b89d15318d25495792152610fc1480ab0
 
     public function getDebugInfo()
     {
-        return array (  142 => 49,  137 => 35,  132 => 10,  126 => 5,  119 => 50,  117 => 49,  113 => 48,  109 => 47,  105 => 46,  93 => 36,  91 => 35,  78 => 25,  74 => 24,  70 => 23,  66 => 22,  51 => 11,  49 => 10,  45 => 9,  41 => 8,  37 => 7,  33 => 6,  29 => 5,  23 => 1,);
+        return array (  148 => 52,  143 => 38,  138 => 12,  132 => 6,  125 => 53,  123 => 52,  119 => 51,  115 => 50,  111 => 49,  99 => 39,  97 => 38,  84 => 28,  80 => 27,  76 => 26,  72 => 25,  68 => 24,  53 => 13,  51 => 12,  46 => 10,  42 => 9,  38 => 8,  34 => 7,  30 => 6,  23 => 1,);
     }
 }

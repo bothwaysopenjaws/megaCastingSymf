@@ -81,12 +81,12 @@ class __TwigTemplate_b142b47f1002539f4fcb3da231384af5f228446c122d08ba15376576470
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.password", array(), "FOSUserBundle"), "html", null, true);
         echo "</label>
                             <input type=\"password\" id=\"password\" name=\"_password\" required=\"required\" />
-
-                            <input type=\"checkbox\" id=\"remember_me\" name=\"_remember_me\" value=\"on\" />
-                            <label for=\"remember_me\">";
+                             <br/>
+                             <input class=\"imageAGauche\" type=\"checkbox\" id=\"remember_me\" name=\"_remember_me\" value=\"on\">
+                             <label for=\"remember_me\">";
         // line 37
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.remember_me", array(), "FOSUserBundle"), "html", null, true);
-        echo "</label>
+        echo "</label> 
 
                             <input class=\"btn\" type=\"submit\" id=\"_submit\" name=\"_submit\" value=\"";
         // line 39

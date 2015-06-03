@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -7,46 +8,48 @@
         <link rel="stylesheet" href="{{ asset('css/bootstrap-responsive.css') }}" />
         <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
         <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}" />
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <button class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse" type="button">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="brand" href="{{ asset('index.html.twig') }}"><img src="megaCasting/../../../../web/images/unnamed.png"></a>
-                    <a class="brand" href="{{ asset('listeOffres.html.twig')}}">Nos offres</a>
-                    <a class="brand" href="{{ asset('nousContacter.html.twig')}}">Nous contacter</a>
-                    <a class="brand" href="{{ asset('quiSommesnous.html.twig')}}">Qui sommes nous</a>
-                    <div class="nav-collapse collapse">
-                        <form class="navbar-form form-search pull-right">
-                    <input id="Search" name="Search" type="text" class="input-medium search-query">
-                    <button type="submit" class="btn">Rechercher</button>
+
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <button class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse" type="button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href="{{asset('app_dev.php/') }}">MegaCastings<img src="megaCasting/../../../../web/images/unnamed.png"></a>
+                <a class="brand" href="{{ asset('app_dev.php/listeOffres')}}">Nos offres</a>
+                <a class="brand" href="{{ asset('app_dev.php/nousContacter')}}">Nous contacter</a>
+                <a class="brand" href="{{ asset('app_dev.php/quiSommesNous') }}">Qui sommes nous</a>
+                <a class="brand" href="{{ asset('app_dev.php/profile') }}">Votre Profil</a>
+                <div class="nav-collapse collapse">
+                    <form class="navbar-form form-search pull-right">
+                        <input id="Search" name="Search" type="text" class="input-medium search-query">
+                        <button type="submit" class="btn">Rechercher</button>
                     </form>
-                    </div>
                 </div>
             </div>
         </div>
-        {% block body %}{% endblock %}
-        <hr noshade size="3" width="100%" align="center">
-	<footer id="footer" class="vspace20">
-		<div class="container">
-			<div class="row">
-				<div class="span4">
-					<p>&copy;Copyright 2015 - CoderLand </p>
-				</div>
-			</div>
-		</div>
-	</footer>	
-	 <script src="{{ asset('js/jquery-1.10.0.min.js') }}"></script>
-        <script src="{{ asset('js/bootstrap.js') }}"></script>
-        <script src="{{ asset('js/main.js') }}"></script>
-        {% block javascripts %}{% endblock %}
+    </div>
+{% block body %}{% endblock %}
+<hr noshade size="3" width="100%" align="center">
+<footer id="footer" class="vspace20">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <p>&copy;Copyright 2015 - CoderLand </p>
+            </div>
+        </div>
+    </div>
+</footer>	
+<script src="{{ asset('js/jquery-1.10.0.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.js') }}"></script>
+<script src="{{ asset('js/main.js') }}"></script>
+{% block javascripts %}{% endblock %}
 </body>
 </html>
 
