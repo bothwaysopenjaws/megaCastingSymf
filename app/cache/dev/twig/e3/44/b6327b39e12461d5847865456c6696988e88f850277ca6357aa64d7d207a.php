@@ -17,33 +17,42 @@ class __TwigTemplate_e344b6327b39e12461d5847865456c6696988e88f850277ca6357aa64d7
     {
         // line 2
         echo "
-<form action=\"";
-        // line 3
+<div class=\"row\">
+    <div class=\"span12\">
+        <h2>Mot de passe perdu</h2>
+        <div id=\"collapseOne\" class=\"accordion-body collapse in\">
+            <div class=\"accordion-inner\">
+                <div class=\"span4\">
+                    <h4>Vous avez perdu votre mot de passe ?</h4>
+                    <em>
+                        Compléter le formulaire, un email vous seras envoyé.<br />
+                        Il contiendra la procèdure à suivre pour récupérer votre mot de passe.
+                    </em>
+                </div>
+
+                <div class=\"span4 offset2\">
+                    <form action=\"";
+        // line 17
         echo $this->env->getExtension('routing')->getPath("fos_user_resetting_send_email");
         echo "\" method=\"POST\" class=\"fos_user_resetting_request\">
-    <div>
-        ";
-        // line 5
-        if (array_key_exists("invalid_username", $context)) {
-            // line 6
-            echo "            <p>";
-            echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("resetting.request.invalid_username", array("%username%" => (isset($context["invalid_username"]) ? $context["invalid_username"] : $this->getContext($context, "invalid_username"))), "FOSUserBundle"), "html", null, true);
-            echo "</p>
-        ";
-        }
-        // line 8
-        echo "        <label for=\"username\">";
+                        <label for=\"username\">";
+        // line 18
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("resetting.request.username", array(), "FOSUserBundle"), "html", null, true);
         echo "</label>
-        <input type=\"text\" id=\"username\" name=\"username\" required=\"required\" />
-    </div>
-    <div>
-        <input type=\"submit\" value=\"";
-        // line 12
+                        <input type=\"text\" id=\"username\" name=\"username\" required=\"required\" />
+                        <br />
+                        <input class=\"btn\" type=\"submit\" value=\"";
+        // line 21
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("resetting.request.submit", array(), "FOSUserBundle"), "html", null, true);
         echo "\" />
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-</form>
+</div>
+
+
 ";
     }
 
@@ -59,6 +68,6 @@ class __TwigTemplate_e344b6327b39e12461d5847865456c6696988e88f850277ca6357aa64d7
 
     public function getDebugInfo()
     {
-        return array (  43 => 12,  35 => 8,  29 => 6,  27 => 5,  22 => 3,  19 => 2,);
+        return array (  46 => 21,  40 => 18,  36 => 17,  19 => 2,);
     }
 }
