@@ -15,7 +15,12 @@ class MainController extends Controller
     
     public function listeOffresAction() 
     {
-        return $this->render('MegaCastingBundle:Default:listeOffres.html.twig');
+         $em = $this->getDoctrine()->getManager();
+
+        $offres = $em->getRepository('MegaCastingBundle:Offre')->findBy(
+    array('isActive' => '1'));
+
+        return $this->render('MegaCastingBundle:Default:listeOffres.html.twig', array('offres' => $offres));
     }
 
 
@@ -34,9 +39,32 @@ class MainController extends Controller
         return $this->render('MegaCastingBundle:Default:quiSommesNous.html.twig');
     }
     
-    
-        public function detailOffreAction($id)
+       
+    public function detailOffreAction($id)
     {
-        return $this->render('MegaCastingBundle:Default:detailOffre.html.twig', array('id' => $id));
+        $em = $this->getDoctrine()->getManager();
+
+        $offre = $em->getRepository('MegaCastingBundle:Offre')->find(array('id' => $id));
+        if (!$offre) throw $this->createNotFoundException('La page n\'existe pas.');
+        
+        return $this->render('MegaCastingBundle:Default:detailOffre.html.twig', array('offre' => $offre));
+    }  
+    
+    
+    public function fluxOffreAction ()
+    {
+        $format = $this->getRequest()->getRequestFormat();
+ 
+        return $this->render('EnsJobeetBundle:Category:show.'.$format.'.twig', array(
+            'category' => $category,
+            'last_page' => $last_page,
+            'previous_page' => $previous_page,
+            'current_page' => $page,
+            'next_page' => $next_page,
+            'total_jobs' => $total_jobs,
+            'feedId' => sha1($this->get('router')->generate('EnsJobeetBundle_category', array('slug' =>  $category->getSlug(), '_format' => 'atom'), true)),
+        ));
     }
+    
+
 }

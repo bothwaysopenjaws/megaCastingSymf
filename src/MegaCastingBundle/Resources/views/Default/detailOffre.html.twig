@@ -2,7 +2,42 @@
 
 {% block body %}
 
+        <h2 class="row">
+            <div>  Détail de l'offre : {{ offre.intitule }} </div>
+        </h2>
+        <div>
+            <div class="span12">
+                <div>
+                Date de publication : {{ offre.datePublication|date('d/m/Y') }}
+                </div>
+                <div>
+                    Date de début : {{ offre.dateDebut|date('d/m/Y') }}
+                </div>
+           </div>
+            
+            
+            
+            <div class="span12">
+                Recruteur : {{ offre.utilisateur.nom }} {{ offre.utilisateur.prenom }}
+            </div>
+            
+            
+            <h4 class="span12">  Détail de l'offre : </h4>
+            
+            
+            
+            <div class="span12" style="width: max-content;  border: 1px solid; margin-bottom: 10px;">
+                
+                <div>{{ offre.description }} </div>
+                
+            </div>
+                
+                
+            <br>
+        </div>
 
-<div style="position: relative">       C'est le detail de l'offre {{ id }} </div>
+
+
+
  
 {% endblock %}

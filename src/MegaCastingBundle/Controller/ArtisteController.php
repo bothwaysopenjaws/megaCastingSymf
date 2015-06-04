@@ -13,3 +13,5 @@ class ArtisteController extends Controller
         return $this->render('MegaCastingBundle:Default:listeArtiste.html.twig');
     }
 }
+
+

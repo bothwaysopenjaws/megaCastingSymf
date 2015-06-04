@@ -231,38 +231,6 @@ class Utilisateur extends BaseUser
         return $this->competences;
     }
 
-    /**
-     * Add medias
-     *
-     * @param \MegaCastingBundle\Entity\Media $medias
-     * @return Utilisateur
-     */
-    public function addMedia(\MegaCastingBundle\Entity\Media $medias)
-    {
-        $this->medias[] = $medias;
-
-        return $this;
-    }
-
-    /**
-     * Remove medias
-     *
-     * @param \MegaCastingBundle\Entity\Media $medias
-     */
-    public function removeMedia(\MegaCastingBundle\Entity\Media $medias)
-    {
-        $this->medias->removeElement($medias);
-    }
-
-    /**
-     * Get medias
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getMedias()
-    {
-        return $this->medias;
-    }
 
     /**
      * Add abonnements
@@ -326,6 +294,8 @@ class Utilisateur extends BaseUser
     public function __construct()
     {
         parent::__construct();
+        
+       
         $this->historiques = new \Doctrine\Common\Collections\ArrayCollection();
         $this->competences = new \Doctrine\Common\Collections\ArrayCollection();
         $this->medias = new \Doctrine\Common\Collections\ArrayCollection();
@@ -472,10 +442,10 @@ class Utilisateur extends BaseUser
     /**
      * Add offres
      *
-     * @param \MegaCastingBundle\Entity\Offres $offres
+     * @param \MegaCastingBundle\Entity\Offre $offres
      * @return Utilisateur
      */
-    public function addOffre(\MegaCastingBundle\Entity\Offres $offres)
+    public function addOffre(\MegaCastingBundle\Entity\Offre $offres)
     {
         $this->offres[] = $offres;
 
@@ -485,9 +455,9 @@ class Utilisateur extends BaseUser
     /**
      * Remove offres
      *
-     * @param \MegaCastingBundle\Entity\Offres $offres
+     * @param \MegaCastingBundle\Entity\Offre $offres
      */
-    public function removeOffre(\MegaCastingBundle\Entity\Offres $offres)
+    public function removeOffre(\MegaCastingBundle\Entity\Offre $offres)
     {
         $this->offres->removeElement($offres);
     }
