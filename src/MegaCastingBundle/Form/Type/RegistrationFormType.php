@@ -12,7 +12,8 @@ class RegistrationFormType extends AbstractType
         // add your custom field
         $builder->add('nom');
         $builder->add('prenom');
-
+        $builder->add('dateNaissance');
+        
     }
 
     public function getParent()

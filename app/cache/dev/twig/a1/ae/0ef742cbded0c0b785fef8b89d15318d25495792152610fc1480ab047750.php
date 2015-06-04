@@ -66,7 +66,7 @@ class __TwigTemplate_a1ae0ef742cbded0c0b785fef8b89d15318d25495792152610fc1480ab0
                 <a class=\"brand\" href=\"";
         // line 24
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("app_dev.php/"), "html", null, true);
-        echo "\">MegaCastings<img src=\"megaCasting/../../../../web/images/unnamed.png\"></a>
+        echo "\">MegaCastings<img src=\"..\\images\\unnamed.png\"></a>
                 <a class=\"brand\" href=\"";
         // line 25
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("app_dev.php/listeOffres"), "html", null, true);
