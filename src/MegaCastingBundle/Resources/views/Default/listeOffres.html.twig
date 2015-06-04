@@ -3,33 +3,43 @@
 
 {% block body %}
 
-<!--        {% if artistes|length != 0 %}
-                <ul class="thumbnails">
-                {% for artiste in artistes %}
-                    <li class="span3">
-                        <div class="thumbnail">
-      
-                            {{ offre.libelle }}
-                            {{ offre.DateDebut }}
-                            {{ artiste.DateNaissance }}
+    {% if offres|length != 0 %}
+                    <ul class="thumbnails">
+                    {% for offre in offres %}
+                        <li class="span3">
+                            <div class="thumbnail">
+                                <h4>{{ offre.intitule }}</h4>
+                                <div class="caption">
+                                    
+                                    <p>{{ offre.typecontrat.libelle }}</p>
+                                    <p> {{ offre.duree }}</p>
+                                    <div style='font-style: italic'> mise en ligne :  {{ offre.datePublication|date("m/d/Y") }}</p>
+                                    <div style='font-style: italic'> debut du contrat : {{ offre.dateDebut|date("m/d/Y") }}</p>
+                                    
+                                     <a  href="{{ path('mega_casting_detailOffre', { 'id' : offre.id }) }}" class="btn-small btn-primary btn">
 
-                            </div>
-                        </div>
-                    </li>
-                    {% endfor %}
-                </ul>
+                                         Détail de l'offre
+                                     </a>
+       
+                                    
+                                    
+                                </div>
+                                    
+                        </li>
+                        
+                        
+                        
+                       
+                        
+                        {% endfor %}
+                    </ul>
 
-                <div class="navigation">
-                    {{ knp_pagination_render(artistes) }}
-                </div>
-                
-            {% else %}
-                    Aucun artistes
-            {% endif %}
+                    <div class="navigation">
+                        
+                    </div>
 
-            
-       -->     
-            
-            list of bananas
+                {% else %}
+                    Aucun produit
+                {% endif %}
                 
        {% endblock %}         
