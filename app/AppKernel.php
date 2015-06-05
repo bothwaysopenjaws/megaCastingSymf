@@ -19,7 +19,6 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new MegaCastingBundle\MegaCastingBundle(),
             new FOS\UserBundle\FOSUserBundle(),
-            new UtilisateurBundle\UtilisateurBundle(),
             
         );
 

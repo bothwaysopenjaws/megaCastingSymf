@@ -135,7 +135,7 @@ class Multimedia
      * @param \MegaCastingBundle\Entity\Utilisateur $utilisateur
      * @return Multimedia
      */
-    public function setUtilisateur(\MegaCastingBundle\Entity\utilisateur $utilisateur)
+    public function setUtilisateur(\MegaCastingBundle\Entity\Utilisateur $utilisateur)
     {
         $this->utilisateur = $utilisateur;
 
