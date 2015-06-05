@@ -5,7 +5,7 @@ namespace MegaCastingBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class MainController extends Controller
+class OffreController extends Controller
 {
     
     public function indexAction()
