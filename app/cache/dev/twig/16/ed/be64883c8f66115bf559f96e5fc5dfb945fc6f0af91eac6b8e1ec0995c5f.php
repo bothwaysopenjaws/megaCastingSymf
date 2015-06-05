@@ -29,37 +29,129 @@ class __TwigTemplate_16edbe64883c8f66115bf559f96e5fc5dfb945fc6f0af91eac6b8e1ec09
     {
         // line 8
         echo "    
- 
-    
-    <img class=\"img_index\" src=\"..\\images\\indexe.jpg\" alt=\"Nouveau !\" /> 
-    <br/>
-    <br/>
-    <p><b>MegaProduction</b> est une société de production créée en janvier 2003.</p>
+<div class=\"container\">
+    <div class=\"row\">
 
-    <p>Parce que le milieu artistique est un monde qui compte beaucoup d'abus, <b>MegaProduction</b> souhaite créer un site Internet de castings <i>« MegaCastings »</i> 
-        qui serait à la fois clair, professionnel et digne de confiance.</p>
+        
+        <div class=\"span9\">
 
+            <ul class=\"thumbnails\">
+                <li class=\"span3\">
+                    <div class=\"thumbnail\">
+                        <img src=\"../img/holder.png\" alt=\"DevAndClick\" width=\"300\" height=\"300\">
+                        <div class=\"caption\">
+                            <h4>Thumbnail label</h4>
+                            <p>100,00 €</p>
+                            <a class=\"btn btn-primary\" href=\"produit.php\">Plus d'infos</a>
+                            <a class=\"btn btn-success\" href=\"panier.php\">Ajouter au panier</a>
+                        </div>
+                    </div>
+                </li>
+                <li class=\"span3\">
+                    <div class=\"thumbnail\">
+                        <img src=\"../img/holder.png\" alt=\"DevAndClick\" width=\"300\" height=\"300\">
+                        <div class=\"caption\">
+                            <h4>Thumbnail label</h4>
+                            <p>100,00 €</p>
+                            <a class=\"btn btn-primary\" href=\"produit.php\">Plus d'infos</a>
+                            <a class=\"btn btn-success\" href=\"panier.php\">Ajouter au panier</a>
+                        </div>
+                    </div>
+                </li>
+                <li class=\"span3\">
+                    <div class=\"thumbnail\">
+                        <img src=\"../img/holder.png\" alt=\"DevAndClick\" width=\"300\" height=\"300\">
+                        <div class=\"caption\">
+                            <h4>Thumbnail label</h4>
+                            <p>Euro 100,00</p>
+                            <a class=\"btn btn-primary\" href=\"produit.php\">Plus d'infos</a>
+                            <a class=\"btn btn-success\" href=\"panier.php\">Ajouter au panier</a>
+                        </div>
+                    </div>
+                </li>
+                <li class=\"span3\">
+                    <div class=\"thumbnail\">
+                        <img src=\"../img/holder.png\" alt=\"DevAndClick\" width=\"300\" height=\"300\">
+                        <div class=\"caption\">
+                            <h4>Thumbnail label</h4>
+                            <p>100,00 €</p>
+                            <a class=\"btn btn-primary\" href=\"produit.php\">Plus d'infos</a>
+                            <a class=\"btn btn-success\" href=\"panier.php\">Ajouter au panier</a>
+                        </div>
+                    </div>
+                </li>
+                <li class=\"span3\">
+                    <div class=\"thumbnail\">
+                        <img src=\"../img/holder.png\" alt=\"DevAndClick\" width=\"300\" height=\"300\">
+                        <div class=\"caption\">
+                            <h4>Thumbnail label</h4>
+                            <p>100,00 €</p>
+                            <a class=\"btn btn-primary\" href=\"produit.php\">Plus d'infos</a>
+                            <a class=\"btn btn-success\" href=\"panier.php\">Ajouter au panier</a>
+                        </div>
+                    </div>
+                </li>
+                <li class=\"span3\">
+                    <div class=\"thumbnail\">
+                        <img src=\"../img/holder.png\" alt=\"DevAndClick\" width=\"300\" height=\"300\">
+                        <div class=\"caption\">
+                            <h4>Thumbnail label</h4>
+                            <p>Euro 100,00</p>
+                            <a class=\"btn btn-primary\" href=\"produit.php\">Plus d'infos</a>
+                            <a class=\"btn btn-success\" href=\"panier.php\">Ajouter au panier</a>
+                        </div>
+                    </div>
+                </li>
+                <li class=\"span3\">
+                    <div class=\"thumbnail\">
+                        <img src=\"../img/holder.png\" alt=\"DevAndClick\" width=\"300\" height=\"300\">
+                        <div class=\"caption\">
+                            <h4>Thumbnail label</h4>
+                            <p>100,00 €</p>
+                            <a class=\"btn btn-primary\" href=\"produit.php\">Plus d'infos</a>
+                            <a class=\"btn btn-success\" href=\"panier.php\">Ajouter au panier</a>
+                        </div>
+                    </div>
+                </li>
+                <li class=\"span3\">
+                    <div class=\"thumbnail\">
+                        <img src=\"../img/holder.png\" alt=\"DevAndClick\" width=\"300\" height=\"300\">
+                        <div class=\"caption\">
+                            <h4>Thumbnail label</h4>
+                            <p>Euro 100,00</p>
+                            <a class=\"btn btn-primary\" href=\"produit.php\">Plus d'infos</a>
+                            <a class=\"btn btn-success\" href=\"panier.php\">Ajouter au panier</a>
+                        </div>
+                    </div>
+                </li>
+                <li class=\"span3\">
+                    <div class=\"thumbnail\">
+                        <img src=\"../img/holder.png\" alt=\"DevAndClick\" width=\"300\" height=\"300\">
+                        <div class=\"caption\">
+                            <h4>Thumbnail label</h4>
+                            <p>100,00 €</p>
+                            <a class=\"btn btn-primary\" href=\"produit.php\">Plus d'infos</a>
+                            <a class=\"btn btn-success\" href=\"panier.php\">Ajouter au panier</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
 
-    <p>C'est pour cette raison que <b>MegaCastings</b> s’engage à être au contraire actif et réactif en permanence dans leur recherche de castings auprès d’un réseau de partenaires ; 
-        c'est également pour cette raison que <b>MegaCastings</b> vérifiera systématiquement les informations des professionnels souhaitant publier des castings en les contactant par 
-        téléphone afin de garantir le sérieux des annonces.<p>
+            <div class=\"pagination\">
+                <ul>
+                    <li class=\"disabled\"><span>Précédent</span></li>
+                    <li class=\"disabled\"><span>1</span></li>
+                    <li><a href=\"#\">2</a></li>
+                    <li><a href=\"#\">3</a></li>
+                    <li><a href=\"#\">4</a></li>
+                    <li><a href=\"#\">5</a></li>
+                    <li><a href=\"#\">Suivant</a></li>
+                </ul>
+            </div>
 
-
-    <p>MegaCastings se veut être un point de rencontre entre professionnels à la recherche de nouveaux talents et artistes désireux de faire leur entrée dans le monde du spectacle.</p>
-<br/>
-
-    <table align=\"center\" class=\"mosaique\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\"> 
-        <tr> 
-            <td><img SRC=\"..\\images\\cine2.jpg\"></td> 
-            <td><img SRC=\"..\\images\\casting.jpg\"></td> 
-            <td><img SRC=\"..\\images\\musique2.jpg\"></td> 
-        </tr> 
-        <tr>
-            <td><img SRC=\"..\\images\\musique.jpg\"></td>
-            <td><img SRC=\"..\\images\\cinema.jpg\"></td>
-            <td><img SRC=\"..\\images\\theatre.jpg\"></td>
-        </tr>
-    </table> 
+        </div>
+    </div>
+</div>
 
 ";
     }

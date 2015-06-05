@@ -65,7 +65,7 @@ class __TwigTemplate_39d9a7da9342e0c930440c23a034345aff535cbddef2b3bf889bceb1149
     <hr noshade size=\"5\" width=\"75%\" align=\"center\">
     <h3>Nous écrire</h3>
     <p>Si vous désirez écrire au siège de l'entreprise MegaProduction :<p>
-    <p><h4>Service Clients MegaProduction</h4></p>
+    <p>Service Clients MegaProduction</p>
     <p> 65 avenue Edouard Vaillant</p>
     <p>92100 Boulogne Billancourt</p>
 
