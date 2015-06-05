@@ -32,3 +32,8 @@ mega_casting_detailOffre:
 mega_casting_nousContacter:
     path:   /nousContacter/
     defaults: { _controller: MegaCastingBundle:Main:nousContacter }
+    
+    
+mega_casting_candidatureArtiste:
+    path:   /candidature/
+    defaults: { _controller: MegaCastingBundle:Main:CandidatureArtiste}

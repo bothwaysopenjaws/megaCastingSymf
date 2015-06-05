@@ -84,11 +84,26 @@ p
 }
 
 .titre_index{
-  font-size: 70px;
+  
   text-align: center;
   font-family:"Segoe print", Arial, Helvetica, sans-serif;
   color:#8B0000;
   font-weight:lighter;
  
-  line-height:150px;
+}
+.span12{
+    max-width: 65%;
+}
+
+.descriptionOffre{
+    
+  
+  font-family:"Segoe print", Arial, Helvetica, sans-serif;
+  color:#8B0000;
+  font-weight:lighter;
+}
+
+.titr{
+    color:#8B0000;
+    font-family:"Segoe print", Arial, Helvetica, sans-serif;
 }
