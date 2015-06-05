@@ -4,6 +4,8 @@ namespace MegaCastingBundle\Controller;
 
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use MegaCastingBundle\Form\Type\candidatureArtiste;
+use MegaCastingBundle\Entity\Candidature;
 
 class MainController extends Controller
 {
@@ -32,6 +34,39 @@ class MainController extends Controller
     public function nousContacterAction() 
     {
         return $this->render('MegaCastingBundle:Default:nousContacter.html.twig');
+    }
+    
+    public function candidatureArtisteAction()
+    {
+        $form = $this->createForm(new candidatureArtiste());
+        
+        if($this->get('request')->getMethod() == 'POST')
+        {
+            $form->bind($this->get('request'));
+            $candidature = new Candidature();
+            $candidature->setNom($form['Nom']->getData());
+            $candidature->setPrenom($form['Prenom']->getData());
+            $candidature->setUrlCv($form['CV']->getData());
+            $candidature->setUrlLettreMotivation($form['Lettre_de_motivation']->getData());
+            $candidature->setDate($form['Date']->getData());
+            $candidature->setEmail($form['Email']->getData());
+            $candidature->setTelephone($form['Telephone']->getData());
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($candidature);
+            $em->flush();
+            return $this->render('MegaCastingBundle:Default:index.html.twig');
+            
+        }
+        
+        return $this->render('MegaCastingBundle:Default:candidature.html.twig',array('form'=> $form->createView()));       
+        
+    }
+   
+    
+    
+    public function candidatureOffreAction() 
+    {
+        return $this->render('MegaCastingBundle:Default:CandidatureArtiste.html.twig');
     }
     
     public function rechercheAction()
