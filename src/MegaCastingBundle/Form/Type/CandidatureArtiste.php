@@ -3,6 +3,7 @@
 namespace MegaCastingBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 
 class candidatureArtiste extends AbstractType
@@ -14,7 +15,6 @@ class candidatureArtiste extends AbstractType
                  $builder ->add("Prenom");
                  $builder->add("Email","email");
                  $builder->add("Telephone");
-                 $builder->add("Date","datetime");
                  $builder ->add("CV","file" );
                  $builder->add("Lettre_de_motivation","file");
                  $builder->add("Envoyer","submit");
