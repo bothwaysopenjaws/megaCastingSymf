@@ -169,7 +169,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         // mega_casting_listeOffres
-        if ($pathinfo === '/listeOffres') {
+        if (rtrim($pathinfo, '/') === '/listeOffres') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'mega_casting_listeOffres');
+            }
+
             return array (  '_controller' => 'MegaCastingBundle\\Controller\\MainController::listeOffresAction',  '_route' => 'mega_casting_listeOffres',);
         }
 
@@ -182,9 +186,9 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'MegaCastingBundle\\Controller\\MainController::quiSommesNousAction',  '_route' => 'mega_casting_quisommesnous',);
         }
 
-        // mega_casting_detailOffre
+        // mega_casting_listeoffres_offre
         if (0 === strpos($pathinfo, '/listeOffres') && preg_match('#^/listeOffres/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'mega_casting_detailOffre')), array (  '_controller' => 'MegaCastingBundle\\Controller\\MainController::detailOffreAction',));
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'mega_casting_listeoffres_offre')), array (  '_controller' => 'MegaCastingBundle\\Controller\\MainController::detailOffreAction',));
         }
 
         // mega_casting_nousContacter
@@ -194,15 +198,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
 
             return array (  '_controller' => 'MegaCastingBundle\\Controller\\MainController::nousContacterAction',  '_route' => 'mega_casting_nousContacter',);
-        }
-
-        // mega_casting_candidatureArtiste
-        if (rtrim($pathinfo, '/') === '/candidature') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'mega_casting_candidatureArtiste');
-            }
-
-            return array (  '_controller' => 'MegaCastingBundle\\Controller\\MainController::CandidatureArtisteAction',  '_route' => 'mega_casting_candidatureArtiste',);
         }
 
         // homepage
