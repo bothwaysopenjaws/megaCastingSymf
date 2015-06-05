@@ -5,11 +5,11 @@ parameters:
     database_port: null
     database_name: MegaCasting
     database_user: root
-    database_password: null
+    database_password: not24get
     mailer_encryption : ssl
     mailer_transport: smtp
     mailer_host: smtp.gmail.com
     mailer_user: megacastings@gmail.com
-    mailer_password: masseur69
+    mailer_password: not24get
     locale: fr
-    secret: Not24get
+    secret: not24get
