@@ -218,10 +218,10 @@ class Offre
     /**
      * Set typeContrat
      *
-     * @param \MegaCastingBundle\Entity\typeContrat $typeContrat
+     * @param \MegaCastingBundle\Entity\TypeContrat $typeContrat
      * @return Offre
      */
-    public function setTypeContrat(\MegaCastingBundle\Entity\typeContrat $typeContrat = null)
+    public function setTypeContrat(\MegaCastingBundle\Entity\TypeContrat $typeContrat = null)
     {
         $this->typeContrat = $typeContrat;
     
@@ -231,7 +231,7 @@ class Offre
     /**
      * Get typeContrat
      *
-     * @return \MegaCastingBundle\Entity\typeContrat 
+     * @return \MegaCastingBundle\Entity\TypeContrat 
      */
     public function getTypeContrat()
     {

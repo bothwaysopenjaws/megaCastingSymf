@@ -83,7 +83,7 @@ class TypeMedia
      * @param \MegaCastingBundle\Entity\Multimedia $multimedias
      * @return TypeMedia
      */
-    public function addMultimedia(\MegaCastingBundle\Entity\Media $multimedias)
+    public function addMultimedia(\MegaCastingBundle\Entity\Multimedia $multimedias)
     {
         $this->multimedias[] = $multimedias;
 

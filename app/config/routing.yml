@@ -1,7 +1,3 @@
-utilisateur:
-    resource: "@UtilisateurBundle/Resources/config/routing.yml"
-    prefix:   /
-
 mega_casting:
     resource: "@MegaCastingBundle/Resources/config/routing.yml"
     prefix:   /
