@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Niveau
  *
- * @ORM\Table("niveau")
+ * @ORM\Table("Niveau")
  * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\NiveauRepository")
  */
 class Niveau

@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * TypeMedia
  *
- * @ORM\Table("typeMedia")
+ * @ORM\Table("TypeMedia")
  * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\TypeMediaRepository")
  */
 class TypeMedia
@@ -34,7 +34,7 @@ class TypeMedia
      * @ORM\OneToMany(targetEntity="Multimedia", mappedBy="typeMedia", cascade={"persist"}, orphanRemoval=false)
      * @ORM\JoinColumn(nullable=true)
      */
-    private $multimedia;
+    private $multimedias;
 
 
     /**

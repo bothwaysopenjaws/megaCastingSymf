@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Competence
  *
- * @ORM\Table("competence")
+ * @ORM\Table("Competence")
  * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\CompetenceRepository")
  */
 class Competence
@@ -125,3 +125,5 @@ class Competence
         return $this->niveau;
     }
 }
+
+

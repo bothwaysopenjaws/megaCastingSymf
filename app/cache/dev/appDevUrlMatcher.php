@@ -127,11 +127,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // utilisateur_homepage
-        if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'utilisateur_homepage')), array (  '_controller' => 'UtilisateurBundle\\Controller\\DefaultController::indexAction',));
-        }
-
         // mega_casting_homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
@@ -194,6 +189,15 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
 
             return array (  '_controller' => 'MegaCastingBundle\\Controller\\MainController::nousContacterAction',  '_route' => 'mega_casting_nousContacter',);
+        }
+
+        // mega_casting_candidatureArtiste
+        if (rtrim($pathinfo, '/') === '/candidature') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'mega_casting_candidatureArtiste');
+            }
+
+            return array (  '_controller' => 'MegaCastingBundle\\Controller\\MainController::CandidatureArtisteAction',  '_route' => 'mega_casting_candidatureArtiste',);
         }
 
         // homepage

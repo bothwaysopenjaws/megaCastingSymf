@@ -9,7 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Utilisateur
  *
- * @ORM\Table("utilisateur")
+ * @ORM\Table("Utilisateur")
  * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\UtilisateurRepository")
  */
 class Utilisateur extends BaseUser

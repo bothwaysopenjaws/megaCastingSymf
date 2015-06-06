@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Adresse
  *
- * @ORM\Table("adresse")
+ * @ORM\Table("Adresse")
  * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\AdresseRepository")
  */
 class Adresse
@@ -154,3 +154,4 @@ class Adresse
     }
 
 }
+

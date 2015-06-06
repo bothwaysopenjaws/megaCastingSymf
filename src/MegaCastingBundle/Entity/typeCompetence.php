@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * TypeCompetence
  *
- * @ORM\Table("typeCompetence")
+ * @ORM\Table("TypeCompetence")
  * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\TypeCompetenceRepository")
  */
 class TypeCompetence

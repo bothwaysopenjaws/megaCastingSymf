@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Offre
  *
- * @ORM\Table("offre")
+ * @ORM\Table("Offre")
  * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\OffreRepository")
  */
 class Offre
@@ -150,7 +150,7 @@ class Offre
     }
 
     /**
-     * Set datefin
+     * Set datePublication
      *
      * @param \DateTime $datePublication
      * @return Offre

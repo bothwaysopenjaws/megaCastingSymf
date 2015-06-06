@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Historique
  *
- * @ORM\Table("historique")
+ * @ORM\Table("Historique")
  * @ORM\Entity(repositoryClass="MegaCastingBundle\Repository\HistoriqueRepository")
  */
 class Historique

@@ -683,7 +683,7 @@ class appDevDebugProjectContainer extends Container
         $c = new \Symfony\Bridge\Doctrine\ContainerAwareEventManager($this);
         $c->addEventSubscriber(new \FOS\UserBundle\Doctrine\Orm\UserListener($this));
 
-        return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('driver' => 'pdo_mysql', 'host' => '127.0.0.1', 'port' => NULL, 'dbname' => 'MegaCasting', 'user' => 'root', 'password' => NULL, 'charset' => 'UTF8', 'driverOptions' => array()), $b, $c, array());
+        return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('driver' => 'pdo_mysql', 'host' => '127.0.0.1', 'port' => NULL, 'dbname' => 'MegaCasting', 'user' => 'root', 'password' => 'not24get', 'charset' => 'UTF8', 'driverOptions' => array()), $b, $c, array());
     }
 
     /**
@@ -785,7 +785,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_metadata_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
-        $instance->setNamespace('sf2orm_default_c1e17a0d7327818b299d365a23a82548de16a7558b9a27d2d3f0b12b5eb0bc53');
+        $instance->setNamespace('sf2orm_default_0f355076b0cf1a5e191be8bf71963a6e2e682fb8a666a3c215033d08350ae9c9');
 
         return $instance;
     }
@@ -802,7 +802,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_query_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
-        $instance->setNamespace('sf2orm_default_c1e17a0d7327818b299d365a23a82548de16a7558b9a27d2d3f0b12b5eb0bc53');
+        $instance->setNamespace('sf2orm_default_0f355076b0cf1a5e191be8bf71963a6e2e682fb8a666a3c215033d08350ae9c9');
 
         return $instance;
     }
@@ -819,7 +819,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_result_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
-        $instance->setNamespace('sf2orm_default_c1e17a0d7327818b299d365a23a82548de16a7558b9a27d2d3f0b12b5eb0bc53');
+        $instance->setNamespace('sf2orm_default_0f355076b0cf1a5e191be8bf71963a6e2e682fb8a666a3c215033d08350ae9c9');
 
         return $instance;
     }
@@ -2383,7 +2383,7 @@ class appDevDebugProjectContainer extends Container
         $i = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($e, $d, array(), $b);
         $i->setOptions(array('login_path' => '/login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'));
 
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => $this->get('security.channel_listener'), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($a, array(0 => $this->get('fos_user.user_provider.username')), 'main', $b, $c), 2 => $g, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($a, $f, $this->get('security.authentication.session_strategy'), $d, 'main', $h, $i, array('check_path' => '/login_check', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $b, $c, $this->get('security.csrf.token_manager')), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($a, '557153e3135ea', $b, $f), 5 => $this->get('security.access_listener')), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($a, $this->get('security.authentication.trust_resolver'), $d, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($e, $d, '/login', false), NULL, NULL, $b));
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => $this->get('security.channel_listener'), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($a, array(0 => $this->get('fos_user.user_provider.username')), 'main', $b, $c), 2 => $g, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($a, $f, $this->get('security.authentication.session_strategy'), $d, 'main', $h, $i, array('check_path' => '/login_check', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $b, $c, $this->get('security.csrf.token_manager')), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($a, '55725a4aca6b5', $b, $f), 5 => $this->get('security.access_listener')), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($a, $this->get('security.authentication.trust_resolver'), $d, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($e, $d, '/login', false), NULL, NULL, $b));
     }
 
     /**
@@ -2802,7 +2802,7 @@ class appDevDebugProjectContainer extends Container
     {
         $a = new \Swift_Transport_Esmtp_AuthHandler(array(0 => new \Swift_Transport_Esmtp_Auth_CramMd5Authenticator(), 1 => new \Swift_Transport_Esmtp_Auth_LoginAuthenticator(), 2 => new \Swift_Transport_Esmtp_Auth_PlainAuthenticator()));
         $a->setUsername('megacastings@gmail.com');
-        $a->setPassword('masseur69');
+        $a->setPassword('not24get');
         $a->setAuthMode(NULL);
 
         $this->services['swiftmailer.mailer.default.transport.real'] = $instance = new \Swift_Transport_EsmtpTransport(new \Swift_Transport_StreamBuffer(new \Swift_StreamFilters_StringReplacementFilterFactory()), array(0 => $a), $this->get('swiftmailer.mailer.default.transport.eventdispatcher'));
@@ -3643,7 +3643,6 @@ class appDevDebugProjectContainer extends Container
         $instance->addResource('yml', ($this->targetDirs[3].'\\vendor\\friendsofsymfony\\user-bundle/Resources/translations\\validators.uk.yml'), 'uk', 'validators');
         $instance->addResource('yml', ($this->targetDirs[3].'\\vendor\\friendsofsymfony\\user-bundle/Resources/translations\\validators.vi.yml'), 'vi', 'validators');
         $instance->addResource('yml', ($this->targetDirs[3].'\\vendor\\friendsofsymfony\\user-bundle/Resources/translations\\validators.zh_CN.yml'), 'zh_CN', 'validators');
-        $instance->addResource('xlf', ($this->targetDirs[3].'\\src\\UtilisateurBundle/Resources/translations\\messages.fr.xlf'), 'fr', 'messages');
 
         return $instance;
     }
@@ -3755,7 +3754,6 @@ class appDevDebugProjectContainer extends Container
         $instance->addPath(($this->targetDirs[3].'\\src\\MegaCastingBundle/Resources/views'), 'MegaCasting');
         $instance->addPath(($this->targetDirs[2].'/Resources/FOSUserBundle/views'), 'FOSUser');
         $instance->addPath(($this->targetDirs[3].'\\vendor\\friendsofsymfony\\user-bundle/Resources/views'), 'FOSUser');
-        $instance->addPath(($this->targetDirs[3].'\\src\\UtilisateurBundle/Resources/views'), 'Utilisateur');
         $instance->addPath(($this->targetDirs[3].'\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\DebugBundle/Resources/views'), 'Debug');
         $instance->addPath(($this->targetDirs[3].'\\src\\Acme\\DemoBundle/Resources/views'), 'AcmeDemo');
         $instance->addPath(($this->targetDirs[3].'\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\WebProfilerBundle/Resources/views'), 'WebProfiler');
@@ -3789,7 +3787,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getUriSignerService()
     {
-        return $this->services['uri_signer'] = new \Symfony\Component\HttpKernel\UriSigner('Not24get');
+        return $this->services['uri_signer'] = new \Symfony\Component\HttpKernel\UriSigner('not24get');
     }
 
     /**
@@ -4111,7 +4109,7 @@ class appDevDebugProjectContainer extends Container
         $b = $this->get('security.user_checker');
         $c = $this->get('security.encoder_factory');
 
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($a, $b, 'main', $c, true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('557153e3135ea'), 2 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($a, $b, 'demo_secured_area', $c, true)), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($a, $b, 'main', $c, true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('55725a4aca6b5'), 2 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($a, $b, 'demo_secured_area', $c, true)), true);
 
         $instance->setEventDispatcher($this->get('debug.event_dispatcher'));
 
@@ -4362,7 +4360,7 @@ class appDevDebugProjectContainer extends Container
             'kernel.root_dir' => $this->targetDirs[2],
             'kernel.environment' => 'dev',
             'kernel.debug' => true,
-            'kernel.name' => 'app',
+            'kernel.name' => 'ap_',
             'kernel.cache_dir' => __DIR__,
             'kernel.logs_dir' => ($this->targetDirs[2].'\\logs'),
             'kernel.bundles' => array(
@@ -4377,7 +4375,6 @@ class appDevDebugProjectContainer extends Container
                 'AppBundle' => 'AppBundle\\AppBundle',
                 'MegaCastingBundle' => 'MegaCastingBundle\\MegaCastingBundle',
                 'FOSUserBundle' => 'FOS\\UserBundle\\FOSUserBundle',
-                'UtilisateurBundle' => 'UtilisateurBundle\\UtilisateurBundle',
                 'DebugBundle' => 'Symfony\\Bundle\\DebugBundle\\DebugBundle',
                 'AcmeDemoBundle' => 'Acme\\DemoBundle\\AcmeDemoBundle',
                 'WebProfilerBundle' => 'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle',
@@ -4391,14 +4388,14 @@ class appDevDebugProjectContainer extends Container
             'database_port' => NULL,
             'database_name' => 'MegaCasting',
             'database_user' => 'root',
-            'database_password' => NULL,
+            'database_password' => 'not24get',
             'mailer_encryption' => 'ssl',
             'mailer_transport' => 'smtp',
             'mailer_host' => 'smtp.gmail.com',
             'mailer_user' => 'megacastings@gmail.com',
-            'mailer_password' => 'masseur69',
+            'mailer_password' => 'not24get',
             'locale' => 'fr',
-            'secret' => 'Not24get',
+            'secret' => 'not24get',
             'controller_resolver.class' => 'Symfony\\Bundle\\FrameworkBundle\\Controller\\ControllerResolver',
             'controller_name_converter.class' => 'Symfony\\Bundle\\FrameworkBundle\\Controller\\ControllerNameParser',
             'response_listener.class' => 'Symfony\\Component\\HttpKernel\\EventListener\\ResponseListener',
@@ -4447,7 +4444,7 @@ class appDevDebugProjectContainer extends Container
             'translation.extractor.class' => 'Symfony\\Component\\Translation\\Extractor\\ChainExtractor',
             'translation.writer.class' => 'Symfony\\Component\\Translation\\Writer\\TranslationWriter',
             'property_accessor.class' => 'Symfony\\Component\\PropertyAccess\\PropertyAccessor',
-            'kernel.secret' => 'Not24get',
+            'kernel.secret' => 'not24get',
             'kernel.http_method_override' => true,
             'kernel.trusted_hosts' => array(
 
@@ -4787,7 +4784,7 @@ class appDevDebugProjectContainer extends Container
             'swiftmailer.mailer.default.transport.smtp.port' => 465,
             'swiftmailer.mailer.default.transport.smtp.host' => 'smtp.gmail.com',
             'swiftmailer.mailer.default.transport.smtp.username' => 'megacastings@gmail.com',
-            'swiftmailer.mailer.default.transport.smtp.password' => 'masseur69',
+            'swiftmailer.mailer.default.transport.smtp.password' => 'not24get',
             'swiftmailer.mailer.default.transport.smtp.auth_mode' => NULL,
             'swiftmailer.mailer.default.transport.smtp.timeout' => 30,
             'swiftmailer.mailer.default.transport.smtp.source_ip' => NULL,
